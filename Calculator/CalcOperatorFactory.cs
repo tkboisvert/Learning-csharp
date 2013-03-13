@@ -17,6 +17,9 @@ namespace Calculator
                 case CalcOperation.Multiply:
                     return new Multiplicator();
 
+                case CalcOperation.Divide:
+                    return new Divider();
+
                 default:
                     throw new NotImplementedException("We dont support that yet");
             }

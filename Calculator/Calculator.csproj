@@ -38,6 +38,7 @@
     <Compile Include="CalcOperator.cs" />
     <Compile Include="CalcOperatorFactory.cs" />
     <Compile Include="Calculator.cs" />
+    <Compile Include="Divider.cs" />
     <Compile Include="Multiplicator.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

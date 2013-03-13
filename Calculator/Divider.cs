@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Calculator
+﻿namespace Calculator
 {
-    class Divider
+    internal class Divider : CalcOperator
     {
+        public override int Calculate(int firstNumber, int secondNumber)
+        {
+            return (firstNumber / secondNumber);
+        }
     }
 }
