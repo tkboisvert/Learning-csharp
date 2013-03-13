@@ -43,6 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DivisionFixtures\When_dividing_numbers.cs" />
     <Compile Include="EquationParserFixtures\When_parsing_an_addition_equation.cs" />
     <Compile Include="EquationParserFixtures\When_parsing_an_addition_equation_with_high_numbers.cs" />
     <Compile Include="EquationParserFixtures\When_parsing_an_subtraction_equation.cs" />
