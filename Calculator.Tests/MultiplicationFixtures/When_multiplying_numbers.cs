@@ -2,6 +2,7 @@
 using NUnit.Framework;
 
 
+
 namespace Calculator.Tests.MultiplicationFixtures
 {
     [TestFixture]
