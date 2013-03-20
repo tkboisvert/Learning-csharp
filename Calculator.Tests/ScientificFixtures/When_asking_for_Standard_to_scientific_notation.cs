@@ -17,7 +17,7 @@ namespace Calculator.Tests.ScientificFixtures
             Notation toNotation = new Notation();
 
             string result = toNotation.Calculate("543000");
-            
+
             Assert.AreEqual("5.43x10^5", result);
 
         }
@@ -29,11 +29,15 @@ namespace Calculator.Tests.ScientificFixtures
 
                 string followingSequence = null;
 
-                string toThePowerOf = null;
+                string finalFollowingSequence = null;
+
+                int toThePowerOf = 0;
 
                 bool boolFirstNumber = true;
 
                 bool boolForFollowingSequence = false;
+
+                bool singleLoopBool = true;
 
                 foreach (char c in input)
                 {
@@ -49,10 +53,21 @@ namespace Calculator.Tests.ScientificFixtures
                         toThePowerOf += 1;
                     }
 
-                    else { if (followingSequence.Length >= 2) {break;} else {boolForFollowingSequence = true;}  }
+                    if (boolForFollowingSequence == true && singleLoopBool == true && followingSequence.Length == 2)
+                    {
+                        finalFollowingSequence = followingSequence;
+                        singleLoopBool = false;
+                    }
+
+                    else
+                    {
+                        boolForFollowingSequence = true;
+                    }
+
                 }
-                
-                return(firstSignificantDigit + "." + followingSequence + "x10^" + toThePowerOf);
+
+                string result = (firstSignificantDigit + "." + finalFollowingSequence + "x10^" + toThePowerOf);
+                return (result);
             }
         }
     }
