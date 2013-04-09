@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace TKBoisvert.Pizza.ConsoleApp
 {
@@ -16,31 +13,11 @@ namespace TKBoisvert.Pizza.ConsoleApp
             
             PizzaBuilderFactory pizzaBuilderFactory = new PizzaBuilderFactory();
             
-            PizzaBuilder pizzaBuilder = pizzaBuilderFactory.Create(userInput);
+            IPizzaBuilder pizzaBuilder = pizzaBuilderFactory.Create(userInput);
             
             Pizza pizza = pizzaBuilder.GetPizza();
-            
-            Console.WriteLine();
 
-        }
-        class Pizza
-        {
-            
-        }
-        class PizzaBuilder
-        {
-            public Pizza GetPizza()
-            {
-                return new Pizza();
-            }
-            
-        }
-        class PizzaBuilderFactory
-        {
-            public PizzaBuilder Create(string userInput)
-            {
-                throw new NotImplementedException();
-            }
+            Console.WriteLine(pizza);
         }
     }
 }
