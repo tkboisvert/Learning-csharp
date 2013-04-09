@@ -55,7 +55,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="HawiianPizzaBuilder.cs" />
+    <Compile Include="HawaiianPizzaBuilder.cs" />
     <Compile Include="IPizzaBuilder.cs" />
     <Compile Include="Pizza.cs" />
     <Compile Include="PizzaBuilder.cs" />
@@ -63,6 +63,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SpicyPizzaBuilder.cs" />
+    <Compile Include="Topping.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

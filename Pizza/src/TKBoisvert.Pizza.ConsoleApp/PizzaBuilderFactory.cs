@@ -6,12 +6,17 @@ namespace TKBoisvert.Pizza.ConsoleApp
     {
         public IPizzaBuilder Create(string userInput)
         {
-            if (userInput == "hawiian")
+            switch (userInput)
             {
-                
-                return new HawiianPizzaBuilder();
+                case "hawiian":
+                    return new HawaiianPizzaBuilder();
+
+                case "spicy":
+                    return new SpicyPizzaBuilder();
+
+                default:
+                    throw new NotImplementedException();
             }
-            throw new NotImplementedException();
         }
     }
 }

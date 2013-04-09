@@ -1,6 +1,6 @@
 ﻿namespace TKBoisvert.Pizza.ConsoleApp
 {
-    public class HawiianPizzaBuilder : IPizzaBuilder
+    public class HawaiianPizzaBuilder : IPizzaBuilder
     {
         public Pizza GetPizza()
         {

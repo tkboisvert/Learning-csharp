@@ -6,7 +6,6 @@ namespace TKBoisvert.Pizza.ConsoleApp
     {
         static void Main(string[] args)
         {
-
             Console.WriteLine("Press 1 for Hawaiian press 2 for Spicy");
 
             string userInput = Console.ReadLine();

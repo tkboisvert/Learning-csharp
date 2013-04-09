@@ -48,6 +48,7 @@
   <ItemGroup>
     <Compile Include="PizzaBuilderFactoryTestFixtures\When_creating_a_hawaiian_pizza.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="HawaiianPizzaBuilderTestFixtures\When_creating_a_hawaiian_pizza.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TKBoisvert.Pizza.ConsoleApp\TKBoisvert.Pizza.ConsoleApp.csproj">
