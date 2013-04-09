@@ -8,8 +8,8 @@
     <ProjectGuid>{912D8D88-30A7-44BA-ADCF-8CAD7B7C1F94}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TKBoisvert.Pizza.Console</RootNamespace>
-    <AssemblyName>TKBoisvert.Pizza.Console</AssemblyName>
+    <RootNamespace>TKBoisvert.Pizza.ConsoleApp</RootNamespace>
+    <AssemblyName>TKBoisvert.Pizza.ConsoleApp</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
