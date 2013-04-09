@@ -6,6 +6,11 @@ namespace TKBoisvert.Pizza.ConsoleApp
     {
         public IPizzaBuilder Create(string userInput)
         {
+            if (userInput == "hawiian")
+            {
+                
+                return new HawiianPizzaBuilder();
+            }
             throw new NotImplementedException();
         }
     }

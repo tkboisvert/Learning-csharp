@@ -16,5 +16,14 @@ namespace TKBoisvert.Pizza.Tests.PizzaBuilderFactoryTestFixtures
 
             pizzaBuilder.Should().BeOfType<HawiianPizzaBuilder>();
         }
+        [Test]
+        public void Should_return_a_spicy_pizza_builder()
+        {
+            var pizzaBuilderFactory = new PizzaBuilderFactory();
+
+            var pizzaBuilder = pizzaBuilderFactory.Create("spicy");
+
+            pizzaBuilder.Should().BeOfType<SpicyPizzaBuilder>();
+        }
     }
 }
