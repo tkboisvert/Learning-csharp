@@ -49,6 +49,7 @@
     <Compile Include="PizzaBuilderFactoryTestFixtures\When_creating_a_hawaiian_pizza.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="HawaiianPizzaBuilderTestFixtures\When_creating_a_hawaiian_pizza.cs" />
+    <Compile Include="SpicyPizzaBuilderTestFixtures\When_creating_a_spicy_pizza.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TKBoisvert.Pizza.ConsoleApp\TKBoisvert.Pizza.ConsoleApp.csproj">
@@ -56,6 +57,7 @@
       <Name>TKBoisvert.Pizza.ConsoleApp</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

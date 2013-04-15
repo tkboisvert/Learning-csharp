@@ -4,7 +4,7 @@
     {
         public Pizza GetPizza()
         {
-            throw new System.NotImplementedException();
+            return new Pizza(Topping.Hawaiian);
         }
     }
 }

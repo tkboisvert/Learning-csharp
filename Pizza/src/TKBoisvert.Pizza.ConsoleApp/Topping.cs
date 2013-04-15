@@ -7,6 +7,11 @@ namespace TKBoisvert.Pizza.ConsoleApp
     {
         Ham = 0,
         Pinapple = 1,
-        Hawaiian = Ham | Pinapple
+        Pepperoni = 2,
+        Sausage = 3,
+        Peppers = 4,
+        Hawaiian = Ham | Pinapple,
+        MeatLovers = Pepperoni | Sausage,
+        Spicy = MeatLovers | Peppers
     }
 }

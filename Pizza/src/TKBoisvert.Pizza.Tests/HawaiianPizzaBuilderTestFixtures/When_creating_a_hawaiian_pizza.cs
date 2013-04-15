@@ -12,7 +12,7 @@ namespace TKBoisvert.Pizza.Tests.HawaiianPizzaBuilderTestFixtures
         {
             var hawaiianPizzaBuilder = new HawaiianPizzaBuilder();
 
-            var pizza = hawaiianPizzaBuilder.GetPizza();
+            var pizza= hawaiianPizzaBuilder.GetPizza();
 
             pizza.Topping.Should().Be(Topping.Hawaiian);
         }
