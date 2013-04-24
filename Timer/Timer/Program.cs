@@ -15,16 +15,11 @@ namespace Timer
             int seconds = 0;
             int minutes = 0;
 
-            Console.WriteLine("Enter the amount of seconds");
-            string secondstring = Console.ReadLine();
-            Console.WriteLine("Enter the amount of minutes");
-            string minutestring = Console.ReadLine();
+            
+            Stack<int> UI = MinuteAndSecondFormatter.GetInfoFromUser(seconds, minutes);
 
-            if (secondstring == "") { seconds = 0; }
-            else { seconds = Convert.ToInt32(secondstring); }
-
-            if (minutestring == "") { minutes = 0; }
-            else { minutes = Convert.ToInt32(minutestring); }
+            seconds = UI.Pop();
+            minutes = UI.Pop();
 
             minutes = MinuteAndSecondFormatter.MinuteCondenser(seconds, minutes);
             seconds = MinuteAndSecondFormatter.SecondReducer(seconds, minutes);

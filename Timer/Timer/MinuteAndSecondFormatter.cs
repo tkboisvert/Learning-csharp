@@ -38,5 +38,24 @@ namespace Timer
 
             return Seconds;
         }
+        public static Stack<int> GetInfoFromUser(int seconds, int minutes)
+        {
+            
+
+            Console.WriteLine("Enter the amount of seconds");
+            string secondstring = Console.ReadLine();
+            Console.WriteLine("Enter the amount of minutes");
+            string minutestring = Console.ReadLine();
+
+            if (secondstring == "") { seconds = 0; }
+            else { seconds = Convert.ToInt32(secondstring); }
+
+            if (minutestring == "") { minutes = 0; }
+            else { minutes = Convert.ToInt32(minutestring); }
+
+            Stack<int> UI = new Stack<int>(); UI.Push(minutes); UI.Push(seconds);
+
+            return UI;
+        }
     }
 }

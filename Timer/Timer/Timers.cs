@@ -21,6 +21,8 @@ namespace Timer
 
             } while (Seconds != 0);
 
+            Console.Clear();
+
             Text.ZeroSecondDisplay(Seconds, Minutes);
 
             return Seconds;

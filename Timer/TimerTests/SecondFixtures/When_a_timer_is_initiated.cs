@@ -12,9 +12,9 @@ namespace TimerTests.SecondFixtures
         public void should_count_down_from_specified_Number_to_zero()
         {
 
-           int shouldBeZero = Timers.SecondTimer(0, 0);
+           int shouldBeZero = Timers.SecondTimer(1, 0);
 
-           Assert.AreEqual(shouldBeZero, 0);
+           Assert.AreEqual(0, shouldBeZero);
 
         }
 

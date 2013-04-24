@@ -46,8 +46,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MinuteFixtures\When_given_one_minute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SecondFixtures\When_a_timer_is_initiated.cs" />
+    <Compile Include="SecondFixtures\When_passing_in_to_many_seconds.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Timer\Timer.csproj">
