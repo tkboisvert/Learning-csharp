@@ -8,33 +8,33 @@ namespace Timer
 {
     class Program
     {
-
         static void Main(string[] args)
         {
-            
-            int seconds = 0;
-            int minutes = 0;
-
-            
-            Stack<int> UI = MinuteAndSecondFormatter.GetInfoFromUser(seconds, minutes);
-
-            seconds = UI.Pop();
-            minutes = UI.Pop();
-
-            minutes = MinuteAndSecondFormatter.MinuteCondenser(seconds, minutes);
-            seconds = MinuteAndSecondFormatter.SecondReducer(seconds, minutes);
-
-            do
+            while (true)
             {
+                Stack<int> UI = MinuteAndSecondFormatter.GetInfoFromUser();
 
-                seconds = Timers.SecondTimer(seconds, minutes);
-                if (minutes >= 1) { seconds = 60; }
-                minutes = Timers.MinuteTimer(minutes);
+                int seconds = UI.Pop();
+                int minutes = UI.Pop();
 
+                minutes = MinuteAndSecondFormatter.MinuteCondenser(seconds, minutes);
+                seconds = MinuteAndSecondFormatter.SecondReducer(seconds, minutes);
 
-            } while (seconds != 0 || minutes != 0);
+                do
+                {
 
-            Console.Read();
+                    if (MinuteAndSecondFormatter.CheckForEmptyInput(seconds, minutes) == false) { break; }
+
+                    seconds = Timers.SecondTimer(seconds, minutes);
+                    if (minutes >= 1) { seconds = 60; }
+                    minutes = Timers.MinuteTimer(minutes);
+
+                } while (seconds != 0 || minutes != 0);
+
+                Console.Clear();
+                Console.WriteLine("Time's up!");
+                Console.ReadLine();
+            }
         }
     }
 }
