@@ -43,12 +43,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MinuteAndSecondFormatter.cs" />
+    <Compile Include="TimerFixtures\MinuteAndSecondFormatter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Text.cs" />
-    <Compile Include="TimerFramework.cs" />
-    <Compile Include="Timers.cs" />
+    <Compile Include="TimerFixtures\TimerFramework.cs" />
+    <Compile Include="TimerFixtures\Timers.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
