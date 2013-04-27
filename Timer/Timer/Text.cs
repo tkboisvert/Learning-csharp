@@ -34,6 +34,15 @@ namespace Timer
             if (Minutes == 1) { Console.WriteLine("There is {0} minute and 0 seconds left", Minutes); }
             else { Console.WriteLine("There is 0 seconds left"); }
         }
-        
+
+        public static void EndText(bool TrueWhenBeingRunByAUser)
+        {
+            if (TrueWhenBeingRunByAUser == true)
+            {
+                Console.Clear();
+                Console.WriteLine("Time's up!");
+                Console.ReadLine();
+            }
+        }
     }
 }

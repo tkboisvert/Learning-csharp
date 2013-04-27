@@ -8,7 +8,7 @@ namespace Timer
 {
     public class MinuteAndSecondFormatter
     {
-        
+
         public static int MinuteCondenser(int Seconds, int Minutes)
         {
             if (Seconds == 0) { return Minutes; }
@@ -39,34 +39,47 @@ namespace Timer
 
             return Seconds;
         }
-        public static Stack<int> GetInfoFromUser()
+        public static Stack<int> GetInfoFromUser(bool TrueForUIFalseForPassing, int programInputOne, int programInputTwo)
         {
-            
-            Console.Clear();
+            Stack<int> UI = new Stack<int>();
 
-            string secondString = GetInfo(true);
-            string minuteString = GetInfo(false);
+            if (TrueForUIFalseForPassing == true)
+            {
+                Console.Clear();
 
-            int seconds = ConvertInputToNumber(secondString);
-            int minutes = ConvertInputToNumber(minuteString);
+                string secondString = GetInfo(true, TrueForUIFalseForPassing);
+                string minuteString = GetInfo(false, TrueForUIFalseForPassing);
 
-            Stack<int> UI = new Stack<int>(); UI.Push(minutes); UI.Push(seconds);
+                int seconds = ConvertInputToNumber(secondString);
+                int minutes = ConvertInputToNumber(minuteString);
 
-            return UI;
+                UI.Push(minutes); UI.Push(seconds);
 
+                return UI;
+            }
+            else
+            {
+                UI.Push(programInputOne); UI.Push(programInputTwo);
+
+                return UI;
+            }
         }
 
-        public static string GetInfo(bool TrueForSecondFalseForMinute)
+        public static string GetInfo(bool TrueForSecondFalseForMinute, bool TrueForUIFalseForPassing)
         {
-            if (TrueForSecondFalseForMinute == true)
+            if (TrueForUIFalseForPassing == true)
             {
-                Console.WriteLine("Enter the amount of seconds");
+                if (TrueForSecondFalseForMinute == true)
+                {
+                    Console.WriteLine("Enter the amount of seconds");
+                }
+                if (TrueForSecondFalseForMinute == false)
+                {
+                    Console.WriteLine("Enter the amount of minutes");
+                }
+                return Console.ReadLine();
             }
-            if (TrueForSecondFalseForMinute == false)
-            {
-                Console.WriteLine("Enter the amount of minutes");
-            }
-            return Console.ReadLine();
+            else { return "0"; }
         }
 
         public static int ConvertInputToNumber(string UI)
