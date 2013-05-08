@@ -1,39 +1,71 @@
 ﻿using System;
 
-namespace Quadratic_Formula
+namespace TKBoisvert.Calculus
 {
     internal class Array
     {
         public static string[] ShiftStringArrayUp(string[] stringsToShift)
         {
-            int lengthOfArray = (stringsToShift.Length - 1);
-            foreach (string s in stringsToShift)
+            string[] strings = new string[stringsToShift.Length];
+
+
+            int lengthOfArray = (strings.Length - 1);
+            foreach (string s in strings)
             {
                 if (lengthOfArray == 0)
                 {
-                    stringsToShift[lengthOfArray] = null;
+                    strings[lengthOfArray] = null;
                     break;
                 }
                 else
                 {
-                    stringsToShift[lengthOfArray] = stringsToShift[--lengthOfArray];
+                    strings[lengthOfArray] = strings[--lengthOfArray];
                 }
             }
-            return stringsToShift;
+            return strings;
         }
 
         public static string[] ConvertToImproperFraction(string[] stringsToConvert)
         {
-            int[] intArray = new int[3];
-            intArray[0] = Convert.ToInt32(stringsToConvert[0]);
-            intArray[1] = Convert.ToInt32(stringsToConvert[1]);
-            intArray[2] = Convert.ToInt32(stringsToConvert[2]);
+            double[] doubleArray = new double[3];
 
-            intArray[1] += (intArray[0] * intArray[2]);
+            doubleArray = Array.ConvertStringArrayToDoubleArray(stringsToConvert);
+
+            doubleArray[1] += (doubleArray[0] * doubleArray[2]);
+
+            stringsToConvert = Array.ConvertDoubleArrayToStringArray(doubleArray);
 
             stringsToConvert = Array.ShiftStringArrayUp(stringsToConvert);
 
             return stringsToConvert;
+        }
+
+        public static double[] ConvertStringArrayToDoubleArray(string[] stringsToConvert)
+        {
+            int i = 0;
+            double[] doubleArray = new double[stringsToConvert.Length];
+
+            foreach (string s in stringsToConvert)
+            {
+                doubleArray[i] = Convert.ToDouble(s);
+                i++;
+            }
+
+            return doubleArray;
+        }
+
+        public static string[] ConvertDoubleArrayToStringArray(double[] doublesToConvert)
+        {
+            int i = 0;
+            string[] stringArray = new string[doublesToConvert.Length];
+
+            foreach (double d in doublesToConvert)
+            {
+                stringArray[i] = Convert.ToString(d);
+                i++;
+            }
+
+            return stringArray;
         }
     }
 }

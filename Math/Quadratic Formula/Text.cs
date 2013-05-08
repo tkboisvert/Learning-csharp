@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-namespace Quadratic_Formula
+namespace TKBoisvert.Calculus
 {
-    class Text
+    internal class Text
     {
         public static void ResultForQF(bool additionIsDecimal,
             bool subtractionIsDecimal,
@@ -30,19 +27,39 @@ namespace Quadratic_Formula
             {
                 Console.WriteLine("Your factors are (X {0}) and (X {1})", Formater.AddTheProperSign(Formater.SwitchSign(Convert.ToInt32(answerForAddition))), Formater.AddTheProperSign(Formater.SwitchSign(Convert.ToInt32(answerForSubtraction))));
             }
-            Console.ReadLine();
         }
 
         public static void ResultForFactor(string[] FinalNumbers, bool XAIsDecimal, bool XBIsDecimal)
         {
             if ((XAIsDecimal == true && XBIsDecimal == true) || (XAIsDecimal == true && XBIsDecimal == false) || (XAIsDecimal == false && XBIsDecimal == true))
-                    {
-                        Console.WriteLine("{0}X^2 {1}X {2}", FinalNumbers[0], FinalNumbers[1], FinalNumbers[2]);
-                    }
-                    else
-                    {
-                        Console.WriteLine("X^2 {0}X {1}", FinalNumbers[1], FinalNumbers[2]);
-                    }
+            {
+                Console.WriteLine("{0}X^2 {1}X {2}", FinalNumbers[0], FinalNumbers[1], FinalNumbers[2]);
+            }
+            else
+            {
+                Console.WriteLine("X^2 {0}X {1}", FinalNumbers[1], FinalNumbers[2]);
+            }
+        }
+
+        public static void xEquals(double d)
+        {
+            Console.WriteLine("X = {0}", d);
+        }
+
+        public static void notDefinableAnswer(double squareRootContents, double b, double c)
+        {
+            Console.Clear();
+            Console.WriteLine("               -{0} {1} {2}({3})", b, '±', '√', squareRootContents);
+            Console.WriteLine("The answer is: ----------");
+            Console.WriteLine("                   {0}", 2 * c);
+            Console.ReadKey();
+        }
+
+        public static void sumIs(double d)
+        {
+            Console.Clear();
+            Console.WriteLine("The sum is {0}", d);
+            Console.ReadKey();
         }
     }
 }

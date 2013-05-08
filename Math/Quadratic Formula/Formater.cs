@@ -1,7 +1,6 @@
 ﻿using System;
-using System.Text;
 
-namespace Quadratic_Formula
+namespace TKBoisvert.Calculus
 {
     internal class Formater
     {
@@ -63,6 +62,7 @@ namespace Quadratic_Formula
                 return frac = "oops";
             }
         }
+
         public static string ReduceFraction(int Numerator, int Denominator)
         {
             try
@@ -87,13 +87,13 @@ namespace Quadratic_Formula
                 string temp2 = Denominator.ToString();
                 string frac = temp1 + "/" + temp2;
                 return frac;
-
             }
             catch (Exception)
             {
                 return "Cannot reduce Fraction";
             }
         }
+
         private static int GCD(int iNo1, int iNo2)
         {
             // take absolute values

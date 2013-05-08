@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace Quadratic_Formula
+namespace TKBoisvert.Calculus
 {
     internal class UI
     {
@@ -10,9 +10,9 @@ namespace Quadratic_Formula
             while (true)
             {
                 Console.Clear();
-                Console.WriteLine("Enter 1 for factoring, enter 2 for checking factors");
+                Console.WriteLine("Enter 1 for factoring, 2 for checking factors, 3 for AdditionS_S");
                 string myChoice = Console.ReadLine();
-                if (myChoice == "1" || myChoice == "2")
+                if (myChoice == "1" || myChoice == "2" || myChoice == "3")
                 {
                     return myChoice;
                 }
@@ -25,34 +25,30 @@ namespace Quadratic_Formula
             }
         }
 
-        public static Stack<int> GetABC()
+        public static Stack<double> GetABC()
         {
-            Stack<int> UI = new Stack<int>();
+            Stack<double> UI = new Stack<double>();
+
+            Console.Clear();
 
             Console.WriteLine("Enter A");
-            UI.Push(Convert.ToInt32(Console.ReadLine()));
+            UI.Push(Convert.ToDouble(Console.ReadLine()));
             Console.WriteLine("Enter B");
-            UI.Push(Convert.ToInt32(Console.ReadLine()));
+            UI.Push(Convert.ToDouble(Console.ReadLine()));
             Console.WriteLine("Enter C");
-            UI.Push(Convert.ToInt32(Console.ReadLine()));
+            UI.Push(Convert.ToDouble(Console.ReadLine()));
 
             return UI;
         }
 
-        public static Double GetFactor(bool first)
+        public static double GetFactor(string WhichOne, string NullOrX)
         {
-            if (first == true)
-            {
-                Console.WriteLine("Enter your first factor");
-            }
-            if (first == false)
-            {
-                Console.WriteLine("Enter your second factor");
-            }
-            Console.Write("X = ");
 
-            return Formater.SwitchDoubleSign(Convert.ToDouble(Console.ReadLine()));
+            Console.WriteLine("Enter the {0}", WhichOne);
+
+            Console.Write("{0} = ", NullOrX);
+
+            return Convert.ToDouble(Console.ReadLine());
         }
-
     }
 }
