@@ -16,12 +16,7 @@ namespace TKBoisvert.Calculus
             }
         }
 
-        public static int SwitchSign(int intInQuestion)
-        {
-            return -1 * intInQuestion;
-        }
-
-        public static Double SwitchDoubleSign(double intInQuestion)
+        public static double SwitchDoubleSign(double intInQuestion)
         {
             return -1 * intInQuestion;
         }
@@ -113,17 +108,11 @@ namespace TKBoisvert.Calculus
             return iNo2;
         }
 
-        public static bool CheckForDecmal(decimal deciInQuestion, double doublInQuestion)
+        public static bool CheckForDecmal(double doublInQuestion)
         {
-            string intString = Convert.ToString(deciInQuestion);
-            foreach (char c in intString)
-            {
-                if (c == '.')
-                {
-                    return true;
-                }
-            }
-            intString = Convert.ToString(doublInQuestion);
+
+            string intString = Convert.ToString(doublInQuestion);
+
             foreach (char c in intString)
             {
                 if (c == '.')
@@ -150,6 +139,7 @@ namespace TKBoisvert.Calculus
                 }
                 if (c == '/' && fractionParts[1] == null)
                 {
+
                     wholeNumberIncluded = false;
                 }
                 if (char.IsDigit(c))
@@ -178,6 +168,35 @@ namespace TKBoisvert.Calculus
             finalNumber[1] = Convert.ToString((XA * B) + (XB * A));
             finalNumber[2] = Convert.ToString(B * A);
             return finalNumber;
+        }
+
+        public static double ChangeFractionsToDecimal_StillReturnsDouble_(string PossibleFractionString)
+        {
+
+            bool containsBackslash = false;
+
+            foreach (char c in PossibleFractionString)
+            {
+                if (c == '/')
+                {
+                    containsBackslash = true;
+                }
+            }
+
+            if (containsBackslash == true)
+            {
+                string[] stringArray = new string[PossibleFractionString.Length];
+                stringArray = FractionParser(PossibleFractionString);
+                double[] doubleStringArray = new double[2];
+                doubleStringArray = Array.StringToArrayToDouble(stringArray);
+                doubleStringArray[0] = (doubleStringArray[1] / doubleStringArray[2]);
+                return doubleStringArray[0];
+            }
+            else
+            {
+                double X = Convert.ToDouble(PossibleFractionString);
+                return X;
+            }
         }
     }
 }

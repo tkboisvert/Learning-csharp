@@ -3,6 +3,8 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TKBoisvert.Calculus", "TKBoisvert.Calculus.csproj", "{AC88581E-727C-4778-A3CB-CF27DE1BED3C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TKBoisvert.Calculus.Tests", "..\TKBoisvert.Calculus.Tests\TKBoisvert.Calculus.Tests.csproj", "{98357F87-76F0-4F4F-90B1-01E430B2B8F8}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x86 = Debug|x86
@@ -13,6 +15,10 @@ Global
 		{AC88581E-727C-4778-A3CB-CF27DE1BED3C}.Debug|x86.Build.0 = Debug|x86
 		{AC88581E-727C-4778-A3CB-CF27DE1BED3C}.Release|x86.ActiveCfg = Release|x86
 		{AC88581E-727C-4778-A3CB-CF27DE1BED3C}.Release|x86.Build.0 = Release|x86
+		{98357F87-76F0-4F4F-90B1-01E430B2B8F8}.Debug|x86.ActiveCfg = Debug|x86
+		{98357F87-76F0-4F4F-90B1-01E430B2B8F8}.Debug|x86.Build.0 = Debug|x86
+		{98357F87-76F0-4F4F-90B1-01E430B2B8F8}.Release|x86.ActiveCfg = Release|x86
+		{98357F87-76F0-4F4F-90B1-01E430B2B8F8}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

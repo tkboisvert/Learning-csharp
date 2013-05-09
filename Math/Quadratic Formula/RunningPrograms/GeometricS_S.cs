@@ -15,9 +15,12 @@ namespace TKBoisvert.Calculus
             double r = UI.GetFactor("ratio (r)", "r = ");
             double n = UI.GetFactor("length (n)", "n = ");
 
+
             double answer = Equations.calculateGeometricSS(a1, r, n);
 
-            Text.sumIs(answer);
+            Text.sumIs(answer, "Σ");
+
+            Console.ReadKey();
         }
     }
 }

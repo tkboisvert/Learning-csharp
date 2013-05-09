@@ -10,13 +10,8 @@ namespace TKBoisvert.Calculus
             while (true)
             {
                 Console.Clear();
-                Console.WriteLine("Press. . .");
-                Console.WriteLine();
-                Console.WriteLine("1 for factoring");
-                Console.WriteLine("2 for checking factors");
-                Console.WriteLine("3 for Addition Sequences & Series");
-                Console.WriteLine("4 for Geometric Sequences & Series");
-                Console.WriteLine();
+
+                Text.menu();
                 
                 string myChoice = Console.ReadLine();
 
@@ -34,29 +29,28 @@ namespace TKBoisvert.Calculus
             }
         }
 
-        public static Stack<double> GetABC()
-        {
-            Stack<double> UI = new Stack<double>();
-
-            Console.Clear();
-
-            Console.WriteLine("Enter A");
-            UI.Push(Convert.ToDouble(Console.ReadLine()));
-            Console.WriteLine("Enter B");
-            UI.Push(Convert.ToDouble(Console.ReadLine()));
-            Console.WriteLine("Enter C");
-            UI.Push(Convert.ToDouble(Console.ReadLine()));
-
-            return UI;
-        }
-
         public static double GetFactor(string WhichOne, string NullOrX)
         {
             Console.WriteLine("Enter the {0}", WhichOne);
 
             Console.Write("{0} ", NullOrX);
 
-            return Convert.ToDouble(Console.ReadLine());
+            string x = Console.ReadLine();
+
+            CheckIsNumber(x);
+            
+            return Formatter.ChangeFractionsToDecimal_StillReturnsDouble_(x);
+        }
+
+        public static void CheckIsNumber(string stringInQuestion)
+        {
+            foreach (char c in stringInQuestion)
+            {
+                if (char.IsLetter(c) || char.IsWhiteSpace(c))
+                {
+                    throw new InvalidOperationException();
+                }
+            }
         }
     }
 }

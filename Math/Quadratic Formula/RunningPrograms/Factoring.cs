@@ -29,7 +29,7 @@ namespace TKBoisvert.Calculus
             double XA = UI.GetFactor("first factor", "X");
             double XB = UI.GetFactor("second factor", "X");
 
-            if (Formatter.CheckForDecmal(1m, XA) == true)
+            if (Formatter.CheckForDecmal(XA) == true)
             {
                 setOfFractionComponentsXA = Formatter.FractionParser(Formatter.ConvertToFraction(XA));
 
@@ -46,7 +46,7 @@ namespace TKBoisvert.Calculus
                 answerA = XA;
             }
 
-            if (Formatter.CheckForDecmal(1m, XB) == true)
+            if (Formatter.CheckForDecmal(XB) == true)
             {
                 setOfFractionComponentsXB = Formatter.FractionParser(Formatter.ConvertToFraction(XB));
 

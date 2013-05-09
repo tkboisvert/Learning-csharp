@@ -13,19 +13,31 @@ namespace TKBoisvert.Calculus
         {
             if (additionIsDecimal == true && subtractionIsDecimal == true)
             {
-                Console.WriteLine("Your factors are ({0}X {1}) and ({2}X {3})", setOfFractionComponentsAddition[2], Formatter.AddTheProperSign(Formatter.SwitchSign(Convert.ToInt32(setOfFractionComponentsAddition[1]))), setOfFractionComponentsSubtraction[2], Formatter.AddTheProperSign(Formatter.SwitchSign(Convert.ToInt32(setOfFractionComponentsSubtraction[1]))));
+                Console.WriteLine("Your factors are ({0}X {1}) and ({2}X {3})", 
+                    setOfFractionComponentsAddition[2], 
+                    Formatter.AddTheProperSign(Formatter.SwitchDoubleSign(Convert.ToDouble(setOfFractionComponentsAddition[1]))),
+                    setOfFractionComponentsSubtraction[2], 
+                    Formatter.AddTheProperSign(Formatter.SwitchDoubleSign(Convert.ToDouble(setOfFractionComponentsSubtraction[1]))));
             }
             else if (additionIsDecimal == true && subtractionIsDecimal == false)
             {
-                Console.WriteLine("Your factors are ({0}X {1}) and (X {2})", setOfFractionComponentsAddition[2], Formatter.AddTheProperSign(Formatter.SwitchSign(Convert.ToInt32(setOfFractionComponentsAddition[1]))), Formatter.AddTheProperSign(Formatter.SwitchSign(Convert.ToInt32(answerForSubtraction))));
+                Console.WriteLine("Your factors are ({0}X {1}) and (X {2})", 
+                    setOfFractionComponentsAddition[2],
+                    Formatter.AddTheProperSign(Formatter.SwitchDoubleSign(Convert.ToDouble(setOfFractionComponentsAddition[1]))),
+                    Formatter.AddTheProperSign(Formatter.SwitchDoubleSign(Convert.ToDouble(answerForSubtraction))));
             }
             else if (additionIsDecimal == false && subtractionIsDecimal == true)
             {
-                Console.WriteLine("Your factors are (X {0}) and ({1}X {2})", Formatter.AddTheProperSign(Formatter.SwitchSign(Convert.ToInt32(answerForAddition))), setOfFractionComponentsSubtraction[2], Formatter.AddTheProperSign(Formatter.SwitchSign(Convert.ToInt32(setOfFractionComponentsSubtraction[1]))));
+                Console.WriteLine("Your factors are (X {0}) and ({1}X {2})",
+                    Formatter.AddTheProperSign(Formatter.SwitchDoubleSign(Convert.ToDouble(answerForAddition))), 
+                    setOfFractionComponentsSubtraction[2], 
+                    Formatter.AddTheProperSign(Formatter.SwitchDoubleSign(Convert.ToDouble(setOfFractionComponentsSubtraction[1]))));
             }
             else
             {
-                Console.WriteLine("Your factors are (X {0}) and (X {1})", Formatter.AddTheProperSign(Formatter.SwitchSign(Convert.ToInt32(answerForAddition))), Formatter.AddTheProperSign(Formatter.SwitchSign(Convert.ToInt32(answerForSubtraction))));
+                Console.WriteLine("Your factors are (X {0}) and (X {1})", 
+                    Formatter.AddTheProperSign(Formatter.SwitchDoubleSign(Convert.ToDouble(answerForAddition))), 
+                    Formatter.AddTheProperSign(Formatter.SwitchDoubleSign(Convert.ToDouble(answerForSubtraction))));
             }
         }
 
@@ -41,11 +53,6 @@ namespace TKBoisvert.Calculus
             }
         }
 
-        public static void xEquals(double d)
-        {
-            Console.WriteLine("X = {0}", d);
-        }
-
         public static void notDefinableAnswer(double squareRootContents, double b, double c)
         {
             Console.Clear();
@@ -55,11 +62,22 @@ namespace TKBoisvert.Calculus
             Console.ReadKey();
         }
 
-        public static void sumIs(double d)
+        public static void sumIs(double answer, string FactorYoureRepresenting)
         {
-            Console.Clear();
-            Console.WriteLine("The sum is {0}", d);
-            Console.ReadKey();
+            Console.WriteLine("{0} = {1}",FactorYoureRepresenting, answer);
+        }
+
+        public static void menu()
+        {
+
+            Console.WriteLine("╓──────────────────────────────────╖");
+            Console.WriteLine("║Press. . .                        ║");
+            Console.WriteLine("╟──────────────────────────────────╢");
+            Console.WriteLine("║1 for factoring                   ║");
+            Console.WriteLine("║2 for checking factors            ║");
+            Console.WriteLine("║3 for Addition Sequences & Series ║");
+            Console.WriteLine("║4 for Geometric Sequences & Series║");
+            Console.WriteLine("╙──────────────────────────────────╜");
         }
     }
 }

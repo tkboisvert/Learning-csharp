@@ -18,7 +18,7 @@ namespace TKBoisvert.Calculus
                 }
                 else
                 {
-                    strings[lengthOfArray] = strings[--lengthOfArray];
+                    strings[lengthOfArray] = stringsToShift[--lengthOfArray];
                 }
             }
             return strings;
@@ -91,6 +91,31 @@ namespace TKBoisvert.Calculus
                 i++;
             }
             return stringsToSwitch;
+        }
+
+        public static double[] StringToArrayToDouble(string[] theStrings)
+        {
+            int i = 0;
+
+            string[] stringArray = new string[theStrings.Length];
+
+            double[] doubleArray = new double[theStrings.Length];
+
+            foreach (string s in theStrings)
+            {
+                stringArray[i] = s;
+                i++;
+            }
+
+            i = 0;
+
+            foreach (string s in stringArray)
+            {
+                doubleArray[i] = Convert.ToDouble(s);
+                i++;
+            }
+
+            return doubleArray;
         }
     }
 }

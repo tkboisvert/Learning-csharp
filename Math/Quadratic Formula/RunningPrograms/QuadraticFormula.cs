@@ -17,11 +17,10 @@ namespace TKBoisvert.Calculus
 
             Console.Clear();
 
-            Stack<double> uI = new Stack<double>(UI.GetABC());
 
-            double a = uI.Pop();
-            double b = uI.Pop();
-            double c = uI.Pop();
+            double a = UI.GetFactor("factor (A)", "A = ");
+            double b = UI.GetFactor("factor (B)", "B = ");
+            double c = UI.GetFactor("factor (C)", "C = ");
 
             double squareRootContents = Equations.contentsOfSquareRootForQF(a, b, c);
 
@@ -37,7 +36,7 @@ namespace TKBoisvert.Calculus
                 double answerForAddition = Equations.positiveResultForQF(squareRoot, b, a);
                 double answerForSubtraction = Equations.negativeResultForQF(squareRoot, b, a);
 
-                if (Formatter.CheckForDecmal(1m, answerForAddition) == true)
+                if (Formatter.CheckForDecmal(answerForAddition) == true)
                 {
                     string additionAnswer = Formatter.ConvertToFraction(answerForAddition);
 
@@ -46,7 +45,7 @@ namespace TKBoisvert.Calculus
                     additionIsDecimal = true;
                 }
 
-                if (Formatter.CheckForDecmal(1m, answerForSubtraction) == true)
+                if (Formatter.CheckForDecmal(answerForSubtraction) == true)
                 {
                     string subtractionAnswer = Formatter.ConvertToFraction(answerForSubtraction);
 
@@ -57,8 +56,8 @@ namespace TKBoisvert.Calculus
 
                 Console.Clear();
                 Text.ResultForQF(additionIsDecimal, subtractionIsDecimal, setOfFractionComponentsAddition, setOfFractionComponentsSubtraction, Convert.ToInt32(answerForAddition), Convert.ToInt32(answerForSubtraction));
-                Text.xEquals(answerForAddition);
-                Text.xEquals(answerForSubtraction);
+                Text.sumIs(answerForAddition, "X");
+                Text.sumIs(answerForSubtraction, "X");
                 Console.ReadKey();
             }
         }
