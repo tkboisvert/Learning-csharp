@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace TKBoisvert.Calculus
+﻿namespace TKBoisvert.Calculus
 {
     internal class Program
     {
-
         private static void Main(string[] args)
         {
-
             while (true)
             {
                 string chooseWhatToDo = UI.GetSelection();
@@ -26,6 +21,11 @@ namespace TKBoisvert.Calculus
                 if (chooseWhatToDo == "3")
                 {
                     AdditionS_S.Run();
+                }
+
+                if (chooseWhatToDo == "4")
+                {
+                    GeometricS_S.Run();
                 }
             }
         }

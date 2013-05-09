@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace TKBoisvert.Calculus
 {
-    class Factoring
+    internal class Factoring
     {
         public static void Run()
         {
@@ -30,13 +27,11 @@ namespace TKBoisvert.Calculus
             Console.Clear();
 
             double XA = UI.GetFactor("first factor", "X");
-            XA = Formater.SwitchDoubleSign(XA);
-            double XB = UI.GetFactor("second factor","X");
-            XB = Formater.SwitchDoubleSign(XB);
+            double XB = UI.GetFactor("second factor", "X");
 
-            if (Formater.CheckForDecmal(1m, XA) == true)
+            if (Formatter.CheckForDecmal(1m, XA) == true)
             {
-                setOfFractionComponentsXA = Formater.FractionParser(Formater.ConvertToFraction(XA));
+                setOfFractionComponentsXA = Formatter.FractionParser(Formatter.ConvertToFraction(XA));
 
                 answerXA = Convert.ToDouble(setOfFractionComponentsXA[2]);
 
@@ -51,9 +46,9 @@ namespace TKBoisvert.Calculus
                 answerA = XA;
             }
 
-            if (Formater.CheckForDecmal(1m, XB) == true)
+            if (Formatter.CheckForDecmal(1m, XB) == true)
             {
-                setOfFractionComponentsXB = Formater.FractionParser(Formater.ConvertToFraction(XB));
+                setOfFractionComponentsXB = Formatter.FractionParser(Formatter.ConvertToFraction(XB));
 
                 answerXB = Convert.ToDouble(setOfFractionComponentsXB[2]);
 
@@ -68,11 +63,9 @@ namespace TKBoisvert.Calculus
                 answerB = XB;
             }
 
-            FinalNumbers = Formater.GetFactorsFromDecimals(answerXA, answerA, answerXB, answerB);
+            FinalNumbers = Formatter.GetFactorsFromDecimals(answerXA, answerA, answerXB, answerB);
 
-            FinalNumbers[0] = Formater.AddTheProperSign(Convert.ToDouble(FinalNumbers[0]));
-            FinalNumbers[1] = Formater.AddTheProperSign(Convert.ToDouble(FinalNumbers[1]));
-            FinalNumbers[2] = Formater.AddTheProperSign(Convert.ToDouble(FinalNumbers[2]));
+            FinalNumbers = Array.addProperSignToEachString(FinalNumbers);
 
             Text.ResultForFactor(FinalNumbers, XAIsDecimal, XBIsDecimal);
 

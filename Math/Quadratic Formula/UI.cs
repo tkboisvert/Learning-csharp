@@ -10,9 +10,17 @@ namespace TKBoisvert.Calculus
             while (true)
             {
                 Console.Clear();
-                Console.WriteLine("Enter 1 for factoring, 2 for checking factors, 3 for AdditionS_S");
+                Console.WriteLine("Press. . .");
+                Console.WriteLine();
+                Console.WriteLine("1 for factoring");
+                Console.WriteLine("2 for checking factors");
+                Console.WriteLine("3 for Addition Sequences & Series");
+                Console.WriteLine("4 for Geometric Sequences & Series");
+                Console.WriteLine();
+                
                 string myChoice = Console.ReadLine();
-                if (myChoice == "1" || myChoice == "2" || myChoice == "3")
+
+                if (myChoice == "1" || myChoice == "2" || myChoice == "3" || myChoice == "4")
                 {
                     return myChoice;
                 }
@@ -22,6 +30,7 @@ namespace TKBoisvert.Calculus
                     Console.WriteLine("Um, that isn't an option...");
                     Console.ReadKey();
                 }
+
             }
         }
 
@@ -43,10 +52,9 @@ namespace TKBoisvert.Calculus
 
         public static double GetFactor(string WhichOne, string NullOrX)
         {
-
             Console.WriteLine("Enter the {0}", WhichOne);
 
-            Console.Write("{0} = ", NullOrX);
+            Console.Write("{0} ", NullOrX);
 
             return Convert.ToDouble(Console.ReadLine());
         }

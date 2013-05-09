@@ -8,7 +8,6 @@ namespace TKBoisvert.Calculus
         {
             string[] strings = new string[stringsToShift.Length];
 
-
             int lengthOfArray = (strings.Length - 1);
             foreach (string s in strings)
             {
@@ -66,6 +65,32 @@ namespace TKBoisvert.Calculus
             }
 
             return stringArray;
+        }
+
+        public static string[] switchAllSignsInDoubleArray(double[] doubleArray)
+        {
+            int i = 0;
+
+            string[] stringArray = new string[doubleArray.Length];
+
+            foreach (double d in doubleArray)
+            {
+                stringArray[i] = Convert.ToString(Formatter.SwitchDoubleSign(d));
+                i++;
+            }
+
+            return stringArray;
+        }
+
+        public static string[] addProperSignToEachString(string[] stringsToSwitch)
+        {
+            int i = 0;
+            foreach (string s in stringsToSwitch)
+            {
+                stringsToSwitch[i] = Formatter.AddTheProperSign(Convert.ToDouble(s));
+                i++;
+            }
+            return stringsToSwitch;
         }
     }
 }

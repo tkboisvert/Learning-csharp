@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace TKBoisvert.Calculus
 {
-    class QuadraticFormula
+    internal class QuadraticFormula
     {
         public static void Run()
         {
@@ -39,20 +37,20 @@ namespace TKBoisvert.Calculus
                 double answerForAddition = Equations.positiveResultForQF(squareRoot, b, a);
                 double answerForSubtraction = Equations.negativeResultForQF(squareRoot, b, a);
 
-                if (Formater.CheckForDecmal(1m, answerForAddition) == true)
+                if (Formatter.CheckForDecmal(1m, answerForAddition) == true)
                 {
-                    string additionAnswer = Formater.ConvertToFraction(answerForAddition);
+                    string additionAnswer = Formatter.ConvertToFraction(answerForAddition);
 
-                    setOfFractionComponentsAddition = Formater.FractionParser(additionAnswer);
+                    setOfFractionComponentsAddition = Formatter.FractionParser(additionAnswer);
 
                     additionIsDecimal = true;
                 }
 
-                if (Formater.CheckForDecmal(1m, answerForSubtraction) == true)
+                if (Formatter.CheckForDecmal(1m, answerForSubtraction) == true)
                 {
-                    string subtractionAnswer = Formater.ConvertToFraction(answerForSubtraction);
+                    string subtractionAnswer = Formatter.ConvertToFraction(answerForSubtraction);
 
-                    setOfFractionComponentsSubtraction = Formater.FractionParser(subtractionAnswer);
+                    setOfFractionComponentsSubtraction = Formatter.FractionParser(subtractionAnswer);
 
                     subtractionIsDecimal = true;
                 }

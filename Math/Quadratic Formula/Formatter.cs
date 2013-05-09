@@ -2,9 +2,9 @@
 
 namespace TKBoisvert.Calculus
 {
-    internal class Formater
+    internal class Formatter
     {
-        public static string AddTheProperSign(Double intInQuestion)
+        public static string AddTheProperSign(double intInQuestion)
         {
             if (intInQuestion <= Convert.ToDouble(-1))
             {
@@ -21,7 +21,7 @@ namespace TKBoisvert.Calculus
             return -1 * intInQuestion;
         }
 
-        public static Double SwitchDoubleSign(Double intInQuestion)
+        public static Double SwitchDoubleSign(double intInQuestion)
         {
             return -1 * intInQuestion;
         }
