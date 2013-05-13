@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace TKBoisvert.Calculus
+namespace TKBoisvert.Calculus.ConsoleApp
 {
     class GeometricS_S
     {
@@ -17,6 +17,12 @@ namespace TKBoisvert.Calculus
 
 
             double answer = Equations.calculateGeometricSS(a1, r, n);
+
+            Console.WriteLine(Formatter.ConvertToFraction(1.75));
+            
+            //change the improper fraction string to proper fraction string 
+
+            Console.Clear();
 
             Text.sumIs(answer, "Σ");
 

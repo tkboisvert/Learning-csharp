@@ -1,4 +1,4 @@
-﻿namespace TKBoisvert.Calculus
+﻿namespace TKBoisvert.Calculus.ConsoleApp
 {
     internal class Equations
     {

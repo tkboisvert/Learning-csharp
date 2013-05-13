@@ -1,6 +1,7 @@
 ﻿using System;
+using System.Linq;
 
-namespace TKBoisvert.Calculus
+namespace TKBoisvert.Calculus.ConsoleApp
 {
     internal class Formatter
     {
@@ -150,12 +151,12 @@ namespace TKBoisvert.Calculus
 
             if (wholeNumberIncluded == false)
             {
-                fractionParts = Array.ShiftStringArrayUp(fractionParts);
+                fractionParts = ArrayChanger.ShiftStringArrayUp(fractionParts).ToArray();
             }
 
             else
             {
-                fractionParts = Array.ConvertToImproperFraction(fractionParts);
+                fractionParts = ArrayChanger.ConvertToImproperFraction(fractionParts);
             }
 
             return fractionParts;
@@ -188,7 +189,7 @@ namespace TKBoisvert.Calculus
                 string[] stringArray = new string[PossibleFractionString.Length];
                 stringArray = FractionParser(PossibleFractionString);
                 double[] doubleStringArray = new double[2];
-                doubleStringArray = Array.StringToArrayToDouble(stringArray);
+                doubleStringArray = ArrayChanger.StringToArrayToDouble(stringArray);
                 doubleStringArray[0] = (doubleStringArray[1] / doubleStringArray[2]);
                 return doubleStringArray[0];
             }
@@ -198,5 +199,7 @@ namespace TKBoisvert.Calculus
                 return X;
             }
         }
+
+        public static string ProperFraction
     }
 }

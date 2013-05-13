@@ -1,6 +1,8 @@
 ﻿using System;
+using System.Text;
+using System.Linq;
 
-namespace TKBoisvert.Calculus
+namespace TKBoisvert.Calculus.ConsoleApp
 {
     internal class Text
     {
@@ -69,15 +71,38 @@ namespace TKBoisvert.Calculus
 
         public static void menu()
         {
+            string menu = BuildMenu(new[] {
+                "factoring", "checking factors", "Addition Sequences & Series", "Geometric Sequences & Series" });
 
-            Console.WriteLine("╓──────────────────────────────────╖");
-            Console.WriteLine("║Press. . .                        ║");
-            Console.WriteLine("╟──────────────────────────────────╢");
-            Console.WriteLine("║1 for factoring                   ║");
-            Console.WriteLine("║2 for checking factors            ║");
-            Console.WriteLine("║3 for Addition Sequences & Series ║");
-            Console.WriteLine("║4 for Geometric Sequences & Series║");
-            Console.WriteLine("╙──────────────────────────────────╜");
+            Console.Write(menu);
+            //Console.WriteLine("╓──────────────────────────────────╖");
+            //Console.WriteLine("║Press. . .                        ║");
+            //Console.WriteLine("╟──────────────────────────────────╢");
+            //Console.WriteLine("║1 for factoring                   ║");
+            //Console.WriteLine("║2 for checking factors            ║");
+            //Console.WriteLine("║3 for Addition Sequences & Series ║");
+            //Console.WriteLine("║4 for Geometric Sequences & Series║");
+            //Console.WriteLine("╙──────────────────────────────────╜");
+        }
+
+        private static string BuildMenu(string[] menuItems)
+        {
+            const int minSize = 7;
+            int longestMenuItemName = menuItems.OrderByDescending(s => s.Length).First().Length;
+            int padSize = minSize + longestMenuItemName;
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.AppendLine("╓".PadRight(padSize, '─') + "╖");
+            stringBuilder.AppendLine("║Press. . .".PadRight(padSize) + "║");
+            stringBuilder.AppendLine("╟".PadRight(padSize, '─') + "╢");
+
+            for (int i = 0; i < menuItems.Length; i++)
+            {
+                var menuItem = string.Format("║{0} for {1}", i + 1, menuItems[i]);
+                stringBuilder.AppendLine(menuItem.PadRight(padSize) + "║");
+            }
+            stringBuilder.AppendLine("╙".PadRight(padSize, '─') + "╜");
+
+            return stringBuilder.ToString();
         }
     }
 }

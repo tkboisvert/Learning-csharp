@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{98357F87-76F0-4F4F-90B1-01E430B2B8F8}</ProjectGuid>
+    <ProjectGuid>{AC88581E-727C-4778-A3CB-CF27DE1BED3C}</ProjectGuid>
     <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TKBoisvert.Calculus.Tests</RootNamespace>
-    <AssemblyName>TKBoisvert.Calculus.Tests</AssemblyName>
+    <RootNamespace>TKBoisvert.Calculus.ConsoleApp</RootNamespace>
+    <AssemblyName>TKBoisvert.Calculus.ConsoleApp</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <FileAlignment>512</FileAlignment>
@@ -33,9 +33,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>TKBoisvert.Calculus.ConsoleApp.Program</StartupObject>
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="FluentAssertions, Version=2.0.1.0, Culture=neutral, PublicKeyToken=33f2691a05b67b6a, processorArchitecture=MSIL" />
-    <Reference Include="nunit.framework, Version=2.5.10.11092, Culture=neutral, PublicKeyToken=96d09a1eb7f44a77, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,14 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ArrayFixtures\When_shifting_a_string_array_.cs" />
+    <Compile Include="ArrayChanger.cs" />
+    <Compile Include="Equations.cs" />
+    <Compile Include="RunningPrograms\GeometricS_S.cs" />
+    <Compile Include="RunningPrograms\AdditionS_S.cs" />
+    <Compile Include="RunningPrograms\Factoring.cs" />
+    <Compile Include="Formatter.cs" />
+    <Compile Include="RunningPrograms\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Quadratic Formula\TKBoisvert.Calculus.csproj">
-      <Project>{AC88581E-727C-4778-A3CB-CF27DE1BED3C}</Project>
-      <Name>TKBoisvert.Calculus</Name>
-    </ProjectReference>
+    <Compile Include="RunningPrograms\QuadraticFormula.cs" />
+    <Compile Include="Text.cs" />
+    <Compile Include="UI.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

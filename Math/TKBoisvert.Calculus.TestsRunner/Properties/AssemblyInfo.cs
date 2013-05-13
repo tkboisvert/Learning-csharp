@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("TKBoisvert.Calculus.Tests")]
+[assembly: AssemblyTitle("TKBoisvert.Calculus.TestsRunner")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("Microsoft")]
-[assembly: AssemblyProduct("TKBoisvert.Calculus.Tests")]
+[assembly: AssemblyProduct("TKBoisvert.Calculus.TestsRunner")]
 [assembly: AssemblyCopyright("Copyright © Microsoft 2013")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("f3e5e7c7-a550-475b-8759-002c000c48d0")]
+[assembly: Guid("a48fce00-a809-4e02-9e55-59bb8f7b7a73")]
 
 // Version information for an assembly consists of the following four values:
 //

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TKBoisvert.Calculus
+namespace TKBoisvert.Calculus.ConsoleApp
 {
     internal class Factoring
     {
@@ -65,7 +65,7 @@ namespace TKBoisvert.Calculus
 
             FinalNumbers = Formatter.GetFactorsFromDecimals(answerXA, answerA, answerXB, answerB);
 
-            FinalNumbers = Array.addProperSignToEachString(FinalNumbers);
+            FinalNumbers = ArrayChanger.addProperSignToEachString(FinalNumbers);
 
             Text.ResultForFactor(FinalNumbers, XAIsDecimal, XBIsDecimal);
 

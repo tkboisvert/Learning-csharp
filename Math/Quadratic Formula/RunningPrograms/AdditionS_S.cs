@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TKBoisvert.Calculus
+namespace TKBoisvert.Calculus.ConsoleApp
 {
     internal class AdditionS_S
     {
@@ -12,11 +12,11 @@ namespace TKBoisvert.Calculus
             double d = UI.GetFactor("common difference (d)", "d = ");
             double n = UI.GetFactor("length (n)", "n = ");
 
-            Console.Clear();
-
             double an = Equations.findASpecificNumberInAdditionSS(a1, n, d);
 
             double sum = Equations.calculateAdditionSSSeries(n, a1, an);
+
+            Console.Clear();
 
             Text.sumIs(sum, "Σ");
 
