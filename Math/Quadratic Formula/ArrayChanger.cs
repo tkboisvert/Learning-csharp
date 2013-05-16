@@ -8,23 +8,23 @@ namespace TKBoisvert.Calculus.ConsoleApp
     {
         public static string[] ShiftStringArrayUp(string[] stringsToShift)
         {
-            return stringsToShift.Reverse().ToArray();
-            //string[] strings = new string[stringsToShift.Length];
+            //return stringsToShift.Reverse().ToArray();
+            string[] strings = new string[stringsToShift.Length];
 
-            //int lengthOfArray = (strings.Length - 1);
-            //foreach (string s in strings)
-            //{
-            //    if (lengthOfArray == 0)
-            //    {
-            //        strings[lengthOfArray] = null;
-            //        break;
-            //    }
-            //    else
-            //    {
-            //        strings[lengthOfArray] = stringsToShift[--lengthOfArray];
-            //    }
-            //}
-            //return strings;
+            int lengthOfArray = (strings.Length - 1);
+            foreach (string s in strings)
+            {
+                if (lengthOfArray == 0)
+                {
+                    strings[lengthOfArray] = null;
+                    break;
+                }
+                else
+                {
+                    strings[lengthOfArray] = stringsToShift[--lengthOfArray];
+                }
+            }
+            return strings;
         }
 
         public static string[] ConvertToImproperFraction(string[] stringsToConvert)
@@ -44,18 +44,18 @@ namespace TKBoisvert.Calculus.ConsoleApp
 
         public static double[] ConvertStringArrayToDoubleArray(string[] stringsToConvert)
         {
-            //int i = 0;
-            //double[] doubleArray = new double[stringsToConvert.Length];
+            int i = 0;
+            double[] doubleArray = new double[stringsToConvert.Length];
 
-            //foreach (string s in stringsToConvert)
-            //{
-            //    doubleArray[i] = Convert.ToDouble(s);
-            //    i++;
-            //}
+            foreach (string s in stringsToConvert)
+            {
+                doubleArray[i] = Convert.ToDouble(s);
+                i++;
+            }
 
-            //return doubleArray;
+            return doubleArray;
 
-            return stringsToConvert.Select(s => Convert.ToDouble(s)).ToArray();
+            // return stringsToConvert.Select(s => Convert.ToDouble(s)).ToArray();
         }
 
         public static string[] ConvertDoubleArrayToStringArray(double[] doublesToConvert)

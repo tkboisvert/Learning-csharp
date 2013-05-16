@@ -75,14 +75,6 @@ namespace TKBoisvert.Calculus.ConsoleApp
                 "factoring", "checking factors", "Addition Sequences & Series", "Geometric Sequences & Series" });
 
             Console.Write(menu);
-            //Console.WriteLine("╓──────────────────────────────────╖");
-            //Console.WriteLine("║Press. . .                        ║");
-            //Console.WriteLine("╟──────────────────────────────────╢");
-            //Console.WriteLine("║1 for factoring                   ║");
-            //Console.WriteLine("║2 for checking factors            ║");
-            //Console.WriteLine("║3 for Addition Sequences & Series ║");
-            //Console.WriteLine("║4 for Geometric Sequences & Series║");
-            //Console.WriteLine("╙──────────────────────────────────╜");
         }
 
         private static string BuildMenu(string[] menuItems)

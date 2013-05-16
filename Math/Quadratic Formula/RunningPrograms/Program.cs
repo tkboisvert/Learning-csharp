@@ -4,6 +4,8 @@
     {
         private static void Main(string[] args)
         {
+            //System.Console.WriteLine(Formatter.ProperFraction("8/2"));
+            //System.Console.ReadKey();
             while (true)
             {
                 string chooseWhatToDo = UI.GetSelection();

@@ -200,6 +200,28 @@ namespace TKBoisvert.Calculus.ConsoleApp
             }
         }
 
-        public static string ProperFraction
+        public static string ProperFraction(string fraction)
+        {
+            string[] FractionPieces = new string[3];
+
+            FractionPieces = FractionParser(fraction);
+
+            double[] FractionDoublePieces = new double[FractionPieces.Length];
+
+            FractionDoublePieces = ArrayChanger.ConvertStringArrayToDoubleArray(FractionPieces);
+
+            FractionDoublePieces[0] = FractionDoublePieces[2] % FractionDoublePieces[1];
+
+            double d = FractionDoublePieces[0] * FractionDoublePieces[2];
+
+            FractionDoublePieces[1] = FractionDoublePieces[1] - d;
+
+            FractionPieces = ArrayChanger.ConvertDoubleArrayToStringArray(FractionDoublePieces);
+
+            return FractionPieces.ToString();
+
+
+
+        }
     }
 }
