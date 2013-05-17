@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace TKBoisvert.Cryptography.Encode
+namespace TKBoisvert.Cryptography.Core
 {
     public class Scrambler
     {

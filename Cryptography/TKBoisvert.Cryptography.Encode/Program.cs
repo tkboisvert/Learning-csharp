@@ -1,33 +1,19 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Linq;
+using TKBoisvert.Cryptography.Core;
 
-namespace TKBoisvert.Cryptography.Encode
+namespace TKBoisvert.Cryptography
 {
     class Program
     {
         static void Main(string[] args)
         {
-
-
             AstheticTextAndPieces ATaP = new AstheticTextAndPieces();
 
-            Scrambler scrambler = new Scrambler();
+            Determine determine = new Determine();
 
-            string phraseToBeCoded = ATaP.GetSomethingFromTheUser("What do you want to encode", "null", "null");
+            string text = ATaP.GetSomethingFromTheUser("Characters to be changed", "null", "null");
 
-            string codePhrase = ATaP.GetCodeWord();
-
-            int[] arrayOfscrambledCode = scrambler.Scramble(phraseToBeCoded, codePhrase);
-
-            foreach (int i in arrayOfscrambledCode)
-            {
-                Console.Write(i + " ");
-            }
-
-            Console.ReadKey();
-
+            determine.HashToUse(text.ToArray());
 
         }
     }

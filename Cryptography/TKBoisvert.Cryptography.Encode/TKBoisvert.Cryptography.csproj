@@ -43,10 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AstheticTextAndPieces.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Scrambler.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\TKBoisvert.Cryptography.Core\TKBoisvert.Cryptography.Core.csproj">
+      <Project>{51F31814-795F-4120-85E1-831AD4E97BF3}</Project>
+      <Name>TKBoisvert.Cryptography.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

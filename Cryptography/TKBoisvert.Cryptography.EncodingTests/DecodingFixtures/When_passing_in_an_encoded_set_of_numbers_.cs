@@ -1,5 +1,5 @@
 ﻿using NUnit.Framework;
-using TKBoisvert.Cryptography.Decode;
+using TKBoisvert.Cryptography.Core;
 
 namespace TKBoisvert.Cryptography.EncodingTests.DecodingFixtures
 {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using FluentAssertions;
 using NUnit.Framework;
-using TKBoisvert.Cryptography.Encode;
+using TKBoisvert.Cryptography.Core;
 
 
 namespace TKBoisvert.Cryptography.EncodingTests

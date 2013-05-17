@@ -2,15 +2,15 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using TKBoisvert.Cryptography.Encode;
 
-namespace TKBoisvert.Cryptography.Decode
+namespace TKBoisvert.Cryptography.Core
 {
     public class Descrambler
     {
         public int SubtractKey(int first, int second)
         {
             return first -= second;
+
         }
 
         public int[] Descramble(int[] scrambledText, string codePhrase)

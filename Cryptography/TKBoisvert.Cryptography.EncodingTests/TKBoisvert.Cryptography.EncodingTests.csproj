@@ -52,21 +52,17 @@
     <Compile Include="CharacterFixtures\When_passing_in_a_character.cs" />
     <Compile Include="CharacterFixtures\When_passing_in_more_than_one_character_.cs" />
     <Compile Include="DecodingFixtures\When_a_single_string_is_passed_in_.cs" />
+    <Compile Include="DecodingFixtures\When_a_string_of_mutiple_three_digit_numbers_is_passed_in_.cs" />
     <Compile Include="DecodingFixtures\When_passing_in_an_encoded_set_of_numbers_.cs" />
     <Compile Include="EncodingFixtures\When_a_single_string_is_passed_in_.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\TKBoisvert.Cryptography.Decode\TKBoisvert.Cryptography.Decode.csproj">
-      <Project>{864CD601-8ADF-4805-A0C2-9394BD45AC06}</Project>
-      <Name>TKBoisvert.Cryptography.Decode</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\TKBoisvert.Cryptography.Encode\TKBoisvert.Cryptography.Encode.csproj">
-      <Project>{DD6701E8-DE91-46EC-AD3A-4322AA35DEBB}</Project>
-      <Name>TKBoisvert.Cryptography.Encode</Name>
+    <ProjectReference Include="..\TKBoisvert.Cryptography.Core\TKBoisvert.Cryptography.Core.csproj">
+      <Project>{51F31814-795F-4120-85E1-831AD4E97BF3}</Project>
+      <Name>TKBoisvert.Cryptography.Core</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

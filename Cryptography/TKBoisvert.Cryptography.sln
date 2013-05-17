@@ -1,11 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TKBoisvert.Cryptography.Encode", "TKBoisvert.Cryptography.Encode.csproj", "{DD6701E8-DE91-46EC-AD3A-4322AA35DEBB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TKBoisvert.Cryptography", "TKBoisvert.Cryptography.Encode\TKBoisvert.Cryptography.csproj", "{DD6701E8-DE91-46EC-AD3A-4322AA35DEBB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TKBoisvert.Cryptography.EncodingTests", "..\TKBoisvert.Cryptography.EncodingTests\TKBoisvert.Cryptography.EncodingTests.csproj", "{463400B2-65DE-4F72-96CF-C4045AA1350A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TKBoisvert.Cryptography.EncodingTests", "TKBoisvert.Cryptography.EncodingTests\TKBoisvert.Cryptography.EncodingTests.csproj", "{463400B2-65DE-4F72-96CF-C4045AA1350A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TKBoisvert.Cryptography.Decode", "..\TKBoisvert.Cryptography.Decode\TKBoisvert.Cryptography.Decode.csproj", "{864CD601-8ADF-4805-A0C2-9394BD45AC06}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TKBoisvert.Cryptography.Core", "TKBoisvert.Cryptography.Core\TKBoisvert.Cryptography.Core.csproj", "{51F31814-795F-4120-85E1-831AD4E97BF3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,16 +37,16 @@ Global
 		{463400B2-65DE-4F72-96CF-C4045AA1350A}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{463400B2-65DE-4F72-96CF-C4045AA1350A}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{463400B2-65DE-4F72-96CF-C4045AA1350A}.Release|x86.ActiveCfg = Release|Any CPU
-		{864CD601-8ADF-4805-A0C2-9394BD45AC06}.Debug|Any CPU.ActiveCfg = Debug|x86
-		{864CD601-8ADF-4805-A0C2-9394BD45AC06}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
-		{864CD601-8ADF-4805-A0C2-9394BD45AC06}.Debug|Mixed Platforms.Build.0 = Debug|x86
-		{864CD601-8ADF-4805-A0C2-9394BD45AC06}.Debug|x86.ActiveCfg = Debug|x86
-		{864CD601-8ADF-4805-A0C2-9394BD45AC06}.Debug|x86.Build.0 = Debug|x86
-		{864CD601-8ADF-4805-A0C2-9394BD45AC06}.Release|Any CPU.ActiveCfg = Release|x86
-		{864CD601-8ADF-4805-A0C2-9394BD45AC06}.Release|Mixed Platforms.ActiveCfg = Release|x86
-		{864CD601-8ADF-4805-A0C2-9394BD45AC06}.Release|Mixed Platforms.Build.0 = Release|x86
-		{864CD601-8ADF-4805-A0C2-9394BD45AC06}.Release|x86.ActiveCfg = Release|x86
-		{864CD601-8ADF-4805-A0C2-9394BD45AC06}.Release|x86.Build.0 = Release|x86
+		{51F31814-795F-4120-85E1-831AD4E97BF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51F31814-795F-4120-85E1-831AD4E97BF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51F31814-795F-4120-85E1-831AD4E97BF3}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{51F31814-795F-4120-85E1-831AD4E97BF3}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{51F31814-795F-4120-85E1-831AD4E97BF3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{51F31814-795F-4120-85E1-831AD4E97BF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51F31814-795F-4120-85E1-831AD4E97BF3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51F31814-795F-4120-85E1-831AD4E97BF3}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{51F31814-795F-4120-85E1-831AD4E97BF3}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{51F31814-795F-4120-85E1-831AD4E97BF3}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
