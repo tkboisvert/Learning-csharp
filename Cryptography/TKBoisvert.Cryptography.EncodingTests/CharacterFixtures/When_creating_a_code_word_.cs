@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using NUnit.Framework;
 using TKBoisvert.Cryptography.Core;
-using NUnit.Framework;
-using FluentAssertions;
 
 namespace TKBoisvert.Cryptography.EncodingTests.CharacterFixtures
 {
     [TestFixture]
-    class When_creating_a_code_word_
+    internal class When_creating_a_code_word_
     {
         [Test]
         public void should_return_an_array_that_reflects_the_word()

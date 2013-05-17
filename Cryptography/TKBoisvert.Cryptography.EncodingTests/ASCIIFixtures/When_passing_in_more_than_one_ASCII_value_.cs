@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using NUnit.Framework;
 using TKBoisvert.Cryptography.Core;
-using NUnit.Framework;
-using FluentAssertions;
 
 namespace TKBoisvert.Cryptography.EncodingTests.ASCIIFixtures
 {
     [TestFixture]
-    class When_passing_in_more_than_one_ASCII_value_
+    internal class When_passing_in_more_than_one_ASCII_value_
     {
         [Test]
         public void should_return_a_string_of_equivalent_significance()

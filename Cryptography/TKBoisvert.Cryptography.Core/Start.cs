@@ -1,29 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using TKBoisvert.Cryptography.Core;
-
-namespace TKBoisvert.Cryptography.Core
+﻿namespace TKBoisvert.Cryptography.Core
 {
-    class Start
+    internal class Start
     {
         public static void TKC(char[] charArray)
         {
             AstheticTextAndPieces ATaP = new AstheticTextAndPieces();
             string oneForEncodingTwoForDecoding = ATaP.Menu();
 
+            string stringToBeConverted = Change.ChangeToFormattedStringForConversion(charArray);
+
             if (oneForEncodingTwoForDecoding == "1")
             {
-                ProgramForEncoding.Encode(charArray);
+                ProgramForEncoding.Encode(stringToBeConverted);
             }
             else if (oneForEncodingTwoForDecoding == "2")
             {
-                ProgramForDecoding.Decode();
-            }
+                ProgramForDecoding.Decode(stringToBeConverted);
 
+                // change selector string to a console key so the read key doesn't bleed over to the GET PASS PHRASE.
+            }
         }
-        
-        
     }
 }

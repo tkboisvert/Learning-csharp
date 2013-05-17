@@ -11,9 +11,9 @@ namespace TKBoisvert.Cryptography.EncodingTests.DecodingFixtures
         {
             Descrambler descrambler = new Descrambler();
 
-            int[] arrayOfCodedInts = new int[]{169, 202};
+            int[] arrayOfCodedInts = new int[] { 169, 202 };
 
-            string decodedText = descrambler.ArrayOfASCIIToString(descrambler.Descramble(arrayOfCodedInts, "a")); //array, code word
+            string decodedText = descrambler.ArrayOfASCIIToString(descrambler.Descramble(arrayOfCodedInts, new int[] { 97 })); //array, code word
 
             Assert.AreEqual("Hi", decodedText);
         }

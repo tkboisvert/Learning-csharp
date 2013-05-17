@@ -1,30 +1,18 @@
 ﻿using System;
-using System.Text;
 
 namespace TKBoisvert.Cryptography.Core
 {
     public class ProgramForEncoding
     {
-        public static void Encode(char[] toBeEncoded)
+        public static void Encode(string toBeEncoded)
         {
-
             Scrambler scrambler = new Scrambler();
 
             AstheticTextAndPieces ATaP = new AstheticTextAndPieces();
 
-            StringBuilder stringBuilder = new StringBuilder();
-
-            foreach (char c in toBeEncoded)
-            {
-                if (c == '/') { stringBuilder.Remove(stringBuilder.Length - 1, 1); break; }
-                else { stringBuilder.Append(c); }
-            }
-
-            string phraseToBeEncoded = stringBuilder.ToString();
-
             string codePhrase = ATaP.GetCodeWord();
 
-            int[] arrayOfscrambledCode = scrambler.Scramble(phraseToBeEncoded, codePhrase);
+            int[] arrayOfscrambledCode = scrambler.Scramble(toBeEncoded, codePhrase);
 
             foreach (int i in arrayOfscrambledCode)
             {

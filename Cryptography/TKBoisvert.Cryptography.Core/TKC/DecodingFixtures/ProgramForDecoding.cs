@@ -1,19 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace TKBoisvert.Cryptography.Core
 {
-    class ProgramForDecoding
+    internal class ProgramForDecoding
     {
-        public static void Decode()
+        public static void Decode(string toBeDecoded)
         {
+            Scrambler scrambler = new Scrambler();
+
             Descrambler descrambler = new Descrambler();
 
-            AstheticTextAndPieces ATaP = new AstheticTextAndPieces();
+            Change change = new Change();
 
-            Console.WriteLine(descrambler.ArrayOfASCIIToString(descrambler.Descramble(ATaP.GetCodedText(), Console.ReadLine())));
+            int[] codedPhrase = change.ToCodedArray(toBeDecoded);
+
+            int[] arrayOfNumbersThatRepresentsThePassPhrase = scrambler.ArrayOfASCIIValues(Console.ReadLine());
+
+            Console.WriteLine(descrambler.ArrayOfASCIIToString(descrambler.Descramble(codedPhrase, arrayOfNumbersThatRepresentsThePassPhrase)));
 
             Console.ReadLine();
         }

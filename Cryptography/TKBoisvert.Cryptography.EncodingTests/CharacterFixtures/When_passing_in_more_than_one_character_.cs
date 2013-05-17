@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using NUnit.Framework;
 using TKBoisvert.Cryptography.Core;
-using NUnit.Framework;
-using FluentAssertions;
 
 namespace TKBoisvert.Cryptography.EncodingTests.CharacterFixtures
 {
     [TestFixture]
-    class When_passing_in_more_than_one_character_
+    internal class When_passing_in_more_than_one_character_
     {
         [Test]
         public void should_return_array_of_ints()
@@ -18,7 +13,7 @@ namespace TKBoisvert.Cryptography.EncodingTests.CharacterFixtures
 
             int[] intArray = scrambler.ArrayOfASCIIValues("be");
 
-            int[] intArrayTwo = new int[]{98, 101};
+            int[] intArrayTwo = new int[] { 98, 101 };
 
             Assert.AreEqual(intArrayTwo, intArray);
         }

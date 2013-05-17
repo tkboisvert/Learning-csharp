@@ -1,24 +1,14 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace TKBoisvert.Cryptography.Core
+﻿namespace TKBoisvert.Cryptography.Core
 {
     public class Descrambler
     {
         public int SubtractKey(int first, int second)
         {
             return first -= second;
-
         }
 
-        public int[] Descramble(int[] scrambledText, string codePhrase)
+        public int[] Descramble(int[] scrambledText, int[] codePhrase)
         {
-            Scrambler scrambler = new Scrambler();
-
-            int[] arrayOfNumbersThatRepresentsTheCodePhrase = scrambler.ArrayOfASCIIValues(codePhrase);
-
             int[] DecodedText = new int[scrambledText.Length];
 
             int x = 0;
@@ -27,11 +17,11 @@ namespace TKBoisvert.Cryptography.Core
 
             foreach (int i in scrambledText)
             {
-                if (x == arrayOfNumbersThatRepresentsTheCodePhrase.Length)
+                if (x == codePhrase.Length)
                 {
                     x = 0;
                 }
-                DecodedText[y] = SubtractKey(i, arrayOfNumbersThatRepresentsTheCodePhrase[x]);
+                DecodedText[y] = SubtractKey(i, codePhrase[x]);
                 x++;
                 y++;
             }

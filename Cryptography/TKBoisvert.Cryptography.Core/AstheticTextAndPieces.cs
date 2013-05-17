@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Linq;
-using System.Collections.Generic;
 using System.Text;
 
 namespace TKBoisvert.Cryptography.Core
@@ -48,32 +47,32 @@ namespace TKBoisvert.Cryptography.Core
             }
         }
 
-        public int[] GetCodedText()
-        {
-            List<int> listOfInts = new List<int>();
-            
-            string theNumbers = "";
+        //public int[] GetCodedText()
+        //{
+        //    List<int> listOfInts = new List<int>();
 
-            while (true)
-            {
-                string numberString = GetSomethingFromTheUser("Enter 000 to move on", theNumbers, "null");
-                int numberInt = Convert.ToInt32(numberString);
-                if (numberInt == 000)
-                {
-                    WhatAmIDoing(theNumbers, "null", "null");
-                    break;
-                }
-                else { listOfInts.Add(numberInt); }
+        //    string theNumbers = "";
 
-                theNumbers += (numberString + " ");
-            }
+        //    while (true)
+        //    {
+        //        string numberString = GetSomethingFromTheUser("Enter 000 to move on", theNumbers, "null");
+        //        int numberInt = Convert.ToInt32(numberString);
+        //        if (numberInt == 000)
+        //        {
+        //            WhatAmIDoing(theNumbers, "null", "null");
+        //            break;
+        //        }
+        //        else { listOfInts.Add(numberInt); }
 
-            int[] arrayOfInts = new int[listOfInts.Count];
+        //        theNumbers += (numberString + " ");
+        //    }
 
-            arrayOfInts = listOfInts.ToArray();
+        //    int[] arrayOfInts = new int[listOfInts.Count];
 
-            return arrayOfInts;
-        }
+        //    arrayOfInts = listOfInts.ToArray();
+
+        //    return arrayOfInts;
+        //}
 
         public void WhatAmIDoing(string high, string middle, string low)
         {
@@ -85,15 +84,15 @@ namespace TKBoisvert.Cryptography.Core
                 Console.WriteLine(high);
             }
             else { Console.WriteLine(""); }
-            
-            if(middle == "null"){ }
+
+            if (middle == "null") { }
             else if (middle != null)
             {
                 Console.WriteLine(middle);
             }
             else { Console.WriteLine(""); }
 
-            if(low == "null"){ }
+            if (low == "null") { }
             else if (low != null)
             {
                 Console.WriteLine(low);

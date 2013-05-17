@@ -1,7 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace TKBoisvert.Cryptography.Core
 {
@@ -21,18 +19,13 @@ namespace TKBoisvert.Cryptography.Core
                     ActionToCarryOut(Hashes.Help, charArray);
                     break;
 
-                case 'd':
-                    throw new NotImplementedException("Decode");
-
                 default:
                     throw new NotImplementedException();
             }
-
         }
 
         public void ActionToCarryOut(Hashes hash, char[] charArrayForEncodingPurposes)
         {
-
             switch (hash)
             {
                 case Hashes.TKC:
@@ -45,8 +38,17 @@ namespace TKBoisvert.Cryptography.Core
                 default:
                     throw new NotImplementedException("We dont support that yet");
             }
-
         }
+
+        public static string IsDivisibleByFour(string theStringInQuestion)
+        {
+            if (theStringInQuestion.Length % 4 != 0)
+            {
+                theStringInQuestion += " ";
+            }
+            return theStringInQuestion;
+        }
+
         public enum Hashes
         {
             TKC,
