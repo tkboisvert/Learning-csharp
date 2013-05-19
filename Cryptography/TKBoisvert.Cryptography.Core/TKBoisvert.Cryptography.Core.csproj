@@ -42,6 +42,8 @@
   <ItemGroup>
     <Compile Include="AstheticTextAndPieces.cs" />
     <Compile Include="ChangeToCodedArray.cs" />
+    <Compile Include="Check.cs" />
+    <Compile Include="HelpFixtures\HelpPage.cs" />
     <Compile Include="TKC\DecodingFixtures\Descrambler.cs" />
     <Compile Include="Determine.cs" />
     <Compile Include="TKC\DecodingFixtures\ProgramForDecoding.cs" />

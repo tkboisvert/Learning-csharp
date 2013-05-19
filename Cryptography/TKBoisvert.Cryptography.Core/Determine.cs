@@ -1,11 +1,40 @@
 ﻿using System;
 using System.Linq;
+using TKBoisvert.Cryptography.Core.HelpFixtures;
+using System.Text;
 
 namespace TKBoisvert.Cryptography.Core
 {
     public class Determine
     {
-        public void HashToUse(char[] charArray)
+        public void HasFlag(StringBuilder stringBuilder)
+        {
+
+            AstheticTextAndPieces ATaP = new AstheticTextAndPieces();
+
+            Determine determine = new Determine();
+
+            if (Check.ForFlag(stringBuilder.ToString()) == false)
+            {
+                while (true)
+                {
+                    HelpPage.ListFlags();
+
+                    string flag = (ATaP.GetSomethingFromTheUser(false, null, "Enter your desired flag", "null"));
+
+                    if (Check.ForFlag(flag) == true)
+                    {
+                        stringBuilder.Append(flag);
+                        break;
+                    }
+                }
+            }
+
+            determine.HashToUse(stringBuilder.ToString().ToArray());
+            
+        }
+
+        private void HashToUse(char[] charArray)
         {
             char c = charArray.Last();
 
@@ -19,12 +48,16 @@ namespace TKBoisvert.Cryptography.Core
                     ActionToCarryOut(Hashes.Help, charArray);
                     break;
 
+                case '/':
+                    ActionToCarryOut(Hashes.Help, charArray);
+                    break;
+
                 default:
                     throw new NotImplementedException();
             }
         }
 
-        public void ActionToCarryOut(Hashes hash, char[] charArrayForEncodingPurposes)
+        private void ActionToCarryOut(Hashes hash, char[] charArrayForEncodingPurposes)
         {
             switch (hash)
             {
@@ -33,7 +66,8 @@ namespace TKBoisvert.Cryptography.Core
                     break;
 
                 case Hashes.Help:
-                    throw new NotImplementedException("help page");
+                    HelpPage.Explaination();
+                    break;
 
                 default:
                     throw new NotImplementedException("We dont support that yet");
@@ -53,6 +87,15 @@ namespace TKBoisvert.Cryptography.Core
         {
             TKC,
             Help,
+        }
+
+        public static bool IfTwoStringArraysAreTheSameLength(string[] one, string[] two)
+        {
+            if (one.Length == two.Length)
+            {
+                return true;
+            }
+            else { throw new ArrayTypeMismatchException("Somethun's broke muster"); }
         }
     }
 }

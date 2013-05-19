@@ -10,7 +10,7 @@ namespace TKBoisvert.Cryptography.Core
 
             AstheticTextAndPieces ATaP = new AstheticTextAndPieces();
 
-            string codePhrase = ATaP.GetCodeWord();
+            string codePhrase = ATaP.GetAndVerifyPassPhrase();
 
             int[] arrayOfscrambledCode = scrambler.Scramble(toBeEncoded, codePhrase);
 

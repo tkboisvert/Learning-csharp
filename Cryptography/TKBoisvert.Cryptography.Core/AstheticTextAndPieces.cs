@@ -6,12 +6,12 @@ namespace TKBoisvert.Cryptography.Core
 {
     public class AstheticTextAndPieces
     {
-        public string GetCodeWord()
+        private string GetCodeWord(string firstOrVerify)
         {
-            string asterisksLength = "";
+            StringBuilder asterisksLength = new StringBuilder();
             string codePhrase = null;
 
-            WhatAmIDoing("Enter your passphrase", "null", "null");
+            TellSomethingToTheUser(true, firstOrVerify, "null", "null");
 
             do
             {
@@ -19,18 +19,43 @@ namespace TKBoisvert.Cryptography.Core
 
                 if (characterInTheCodePhrase == "break")
                 {
-                    WhatAmIDoing("null", asterisksLength, "Don't forget it!");
+                    TellSomethingToTheUser(true, "null", asterisksLength.ToString(), "null");
                     break;
                 }
                 else
                 {
                     codePhrase += characterInTheCodePhrase;
-                    WhatAmIDoing("Enter your passphrase", asterisksLength + characterInTheCodePhrase, null);
-                    asterisksLength += "*";
+                    TellSomethingToTheUser(true, firstOrVerify, asterisksLength + characterInTheCodePhrase, "null");
+                    asterisksLength.Append("*");
                 }
             } while (true);
 
+            if (codePhrase == null)
+            {
+                GetAndVerifyPassPhrase();
+            }
             return codePhrase;
+            
+        }
+
+        public string GetAndVerifyPassPhrase()
+        {
+            while (true)
+            {
+                string passPhrase = GetCodeWord("Enter your passphrase");
+
+                if (passPhrase == GetCodeWord("Please verify your passphrase"))
+                {
+                    return passPhrase;
+                }
+                else
+                {
+                    TellSomethingToTheUser(true, "They did not match,", "press any key to try again", "null");
+                    Console.ReadKey();
+                }
+            }
+
+
         }
 
         public string GetCharacterInCodePhrase()
@@ -74,9 +99,12 @@ namespace TKBoisvert.Cryptography.Core
         //    return arrayOfInts;
         //}
 
-        public void WhatAmIDoing(string high, string middle, string low)
+        public void TellSomethingToTheUser(bool clearScreen,string high, string middle, string low)
         {
-            Console.Clear();
+            if (clearScreen == true)
+            {
+                Console.Clear();
+            }
 
             if (high == "null") { }
             else if (high != null)
@@ -100,14 +128,14 @@ namespace TKBoisvert.Cryptography.Core
             else { Console.WriteLine(""); }
         }
 
-        public string GetSomethingFromTheUser(string whatItIsYouWant, string middle, string low)
+        public string GetSomethingFromTheUser(bool clearScreen, string whatItIsYouWant, string middle, string low)
         {
-            WhatAmIDoing(whatItIsYouWant, middle, low);
+            TellSomethingToTheUser(clearScreen, whatItIsYouWant, middle, low);
 
             return Console.ReadLine();
         }
 
-        public string Menu()
+        public ConsoleKeyInfo Menu()
         {
             while (true)
             {
@@ -117,11 +145,11 @@ namespace TKBoisvert.Cryptography.Core
 
                 Console.Write(menu);
 
-                string myChoice = Console.ReadLine();
+                ConsoleKeyInfo keyInfo = Console.ReadKey();
 
-                if (myChoice == "1" || myChoice == "2")
+                if (keyInfo.Key == ConsoleKey.D1 || keyInfo.Key == ConsoleKey.D2)
                 {
-                    return myChoice;
+                    return keyInfo;
                 }
                 else
                 {

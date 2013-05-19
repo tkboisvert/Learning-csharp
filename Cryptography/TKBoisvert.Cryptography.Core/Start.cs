@@ -1,23 +1,23 @@
-﻿namespace TKBoisvert.Cryptography.Core
+﻿using System;
+namespace TKBoisvert.Cryptography.Core
 {
     internal class Start
     {
         public static void TKC(char[] charArray)
         {
             AstheticTextAndPieces ATaP = new AstheticTextAndPieces();
-            string oneForEncodingTwoForDecoding = ATaP.Menu();
+
+            ConsoleKeyInfo keyInfo = ATaP.Menu();
 
             string stringToBeConverted = Change.ChangeToFormattedStringForConversion(charArray);
 
-            if (oneForEncodingTwoForDecoding == "1")
+            if (keyInfo.Key == ConsoleKey.D1)
             {
                 ProgramForEncoding.Encode(stringToBeConverted);
             }
-            else if (oneForEncodingTwoForDecoding == "2")
+            else if (keyInfo.Key == ConsoleKey.D2)
             {
                 ProgramForDecoding.Decode(stringToBeConverted);
-
-                // change selector string to a console key so the read key doesn't bleed over to the GET PASS PHRASE.
             }
         }
     }

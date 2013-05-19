@@ -1,5 +1,7 @@
 ﻿using System.Linq;
 using TKBoisvert.Cryptography.Core;
+using TKBoisvert.Cryptography.Core.HelpFixtures;
+using System.Text;
 
 namespace TKBoisvert.Cryptography
 {
@@ -7,13 +9,19 @@ namespace TKBoisvert.Cryptography
     {
         private static void Main(string[] args)
         {
-            AstheticTextAndPieces ATaP = new AstheticTextAndPieces();
+            while (true)
+            {
+                AstheticTextAndPieces ATaP = new AstheticTextAndPieces();
 
-            Determine determine = new Determine();
+                Determine determine = new Determine();
 
-            string text = ATaP.GetSomethingFromTheUser("Characters to be changed", "Remember to add your preferred encoding flag", "Type /? for help");
+                StringBuilder stringBuilder = new StringBuilder();
 
-            determine.HashToUse(text.ToArray());
+                stringBuilder.Append(ATaP.GetSomethingFromTheUser(true, "Enter what you want to encode/decode", "Remember to add a flag", "Type /? for help"));
+
+                determine.HasFlag(stringBuilder);
+                
+            }
         }
     }
 }

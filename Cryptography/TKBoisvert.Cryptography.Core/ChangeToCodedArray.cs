@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+using System.Collections.Generic;
 
 namespace TKBoisvert.Cryptography.Core
 {
@@ -40,10 +41,17 @@ namespace TKBoisvert.Cryptography.Core
         {
             StringBuilder stringBuilder = new StringBuilder();
 
+            Queue<char> theLastCharacter = new Queue<char>(); theLastCharacter.Enqueue('0');
+
             foreach (char c in charArray)
             {
-                if (c == '/') { stringBuilder.Remove(stringBuilder.Length - 1, 1); break; }
-                else { stringBuilder.Append(c); }
+                if (c == '/' && theLastCharacter.Peek() == ' ') { stringBuilder.Remove(stringBuilder.Length - 1, 1); break; }
+                else if (c == '/') { break; }
+                else
+                {
+                    theLastCharacter.Enqueue(c);
+                    stringBuilder.Append(c);
+                }
             }
 
             return stringBuilder.ToString();
