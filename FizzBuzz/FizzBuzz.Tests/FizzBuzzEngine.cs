@@ -11,7 +11,14 @@ namespace FizzBuzz.Tests
         {
             for (int i = startingNumber; i <= endNumber; i++)
             {
-                if (i == 3) { yield return "fizz"; }
+                if (i == 3)
+                {
+                    yield return "fizz";
+                }
+                if (i == 5)
+                {
+                    yield return "buzz";
+                }
                 else { yield return i.ToString(); }
             }
         }
