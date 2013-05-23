@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="FizzBuzzEngine.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="When_converting_a_single_number_to_fizz_buzz.cs" />
     <Compile Include="When_passing_in_two_numerbs_to_the_fizz_buzz_engine.cs" />
   </ItemGroup>
   <ItemGroup>
