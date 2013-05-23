@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using FluentAssertions;
+﻿using FluentAssertions;
 using NUnit.Framework;
 
 namespace FizzBuzz.Tests
 {
     [TestFixture]
-    class When_passing_in_two_numerbs_to_the_FizzBuzz_engine
+    class WhenPassingInTwoNumerbsToTheFizzBuzzEngine
     {
         [Test]
         public void Should_return_the_numer_one_as_a_string()
