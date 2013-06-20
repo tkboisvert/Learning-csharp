@@ -13,14 +13,7 @@ namespace FizzBuzz.Tests
         {
             fizzBuzzEngine = new FizzBuzzEngine();
         }
-        [Test]
-        public void Should_return_the_numer_one_as_a_string()
-        {
-            var result = fizzBuzzEngine.Run(1, 1);
-
-            result.Should().Contain("1");
-        }
-
+        
         [Test]
         public void Should_rteurn_the_number_one_and_two()
         {
@@ -54,7 +47,7 @@ namespace FizzBuzz.Tests
                 new object[]
                     {
                         "1", "2", "fizz", "4", "buzz", "fizz", "7", "8", "fizz", "buzz", "11", "fizz", "13", "14",
-                        "fizzbuzz", "16", "17", "18", "19", "buzz"
+                        "fizzbuzz", "16", "17", "fizz", "19", "buzz"
                     });
         }
     
