@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{5C2DA2E5-EC35-4738-9589-164CAACAFADB}</ProjectGuid>
+    <ProjectGuid>{8CA6D1C1-C3DF-4E5D-BCA5-6BA54A4D6F93}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>TKBoisvert.SnapIns</RootNamespace>
-    <AssemblyName>TKBoisvert.SnapIns</AssemblyName>
+    <RootNamespace>TKBosivert.SnapIns</RootNamespace>
+    <AssemblyName>TKBosivert.SnapIns</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -40,7 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Text.cs" />
+    <Compile Include="AstheticTextAndPieces.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

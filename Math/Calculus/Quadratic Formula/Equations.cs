@@ -1,4 +1,7 @@
-﻿namespace TKBoisvert.Calculus.ConsoleApp
+﻿using System;
+
+namespace TKBoisvert.Calculus.ConsoleApp
+
 {
     internal class Equations
     {
@@ -35,7 +38,16 @@
 
         public static double calculateGeometricSS(double a1, double r, double n)
         {
-            double answer = ((a1 * (1 - (System.Math.Pow(r, n)))) / (1 - r));
+            double answer = ((a1 * (1 - (Math.Pow(r, n)))) / (1 - r));
+            return answer;
+        }
+
+        public static double binomialTheorem(double a, double b, double n, double k)
+        {
+            double powerForA = n - k;
+
+            double answer = ((Math.Pow(a, powerForA)) * (Math.Pow(b, k)));
+
             return answer;
         }
     }

@@ -18,11 +18,11 @@ namespace TKBoisvert.Cryptography.EncodingTests
 
             Descrambler descrambler = new Descrambler();
 
-            AstheticTextAndPieces ATaP = new AstheticTextAndPieces();
+            UserInteractions ATaP = new UserInteractions();
 
             int[] arrayOfscrambledCode = scrambler.Scramble("toBeEncoded", "codePhrase");
 
-            int[] scrambledCodePhrase = scrambler.ArrayOfASCIIValues("codePhrase");
+            int[] scrambledCodePhrase = scrambler.ArrayOfUtf8Values("codePhrase");
 
             string finalResult = descrambler.ArrayOfASCIIToString(descrambler.Descramble(arrayOfscrambledCode, scrambledCodePhrase));
 

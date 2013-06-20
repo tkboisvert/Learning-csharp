@@ -29,6 +29,11 @@
                 {
                     GeometricS_S.Run();
                 }
+
+                if (chooseWhatToDo == "5")
+                {
+                    BinomialTheoremRunner.Run();
+                }
             }
         }
     }

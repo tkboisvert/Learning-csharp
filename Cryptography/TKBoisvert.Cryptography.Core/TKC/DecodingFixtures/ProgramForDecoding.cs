@@ -10,13 +10,13 @@ namespace TKBoisvert.Cryptography.Core
 
             Descrambler descrambler = new Descrambler();
 
-            AstheticTextAndPieces ATaP = new AstheticTextAndPieces();
+            UserInteractions ATaP = new UserInteractions();
 
             Change change = new Change();
 
             int[] codedPhrase = change.ToCodedArray(toBeDecoded);
 
-            int[] arrayOfNumbersThatRepresentsThePassPhrase = scrambler.ArrayOfASCIIValues(ATaP.GetAndVerifyPassPhrase());
+            int[] arrayOfNumbersThatRepresentsThePassPhrase = scrambler.ArrayOfUtf8Values(ATaP.GetAndVerifyPassPhrase());
 
             Console.WriteLine(descrambler.ArrayOfASCIIToString(descrambler.Descramble(codedPhrase, arrayOfNumbersThatRepresentsThePassPhrase)));
 

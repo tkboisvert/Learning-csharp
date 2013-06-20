@@ -18,9 +18,9 @@ namespace TKBoisvert.Calculus.ConsoleApp
             Console.Clear();
 
 
-            double a = UI.GetFactor("factor (A)", "A = ");
-            double b = UI.GetFactor("factor (B)", "B = ");
-            double c = UI.GetFactor("factor (C)", "C = ");
+            double a = UI.GetFactor("factor (A)", "A");
+            double b = UI.GetFactor("factor (B)", "B");
+            double c = UI.GetFactor("factor (C)", "C");
 
             double squareRootContents = Equations.contentsOfSquareRootForQF(a, b, c);
 

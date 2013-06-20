@@ -1,17 +1,21 @@
 ﻿using System;
 using System.Linq;
 using System.Text;
+using System.Collections.Generic;
 
 namespace TKBoisvert.Cryptography.Core
 {
-    public class AstheticTextAndPieces
+    public class UserInteractions
     {
         private string GetCodeWord(string firstOrVerify)
         {
             StringBuilder asterisksLength = new StringBuilder();
-            string codePhrase = null;
 
-            TellSomethingToTheUser(true, firstOrVerify, "null", "null");
+            StringBuilder codePhrase = new StringBuilder();
+
+            //string codePhrase = null;
+
+            TellSomethingToTheUser(true, new string[]{firstOrVerify, "null", "null"});
 
             do
             {
@@ -19,22 +23,23 @@ namespace TKBoisvert.Cryptography.Core
 
                 if (characterInTheCodePhrase == "break")
                 {
-                    TellSomethingToTheUser(true, "null", asterisksLength.ToString(), "null");
+                    TellSomethingToTheUser(true, new string[]{"null", asterisksLength.ToString(), "null"});
                     break;
                 }
                 else
                 {
-                    codePhrase += characterInTheCodePhrase;
-                    TellSomethingToTheUser(true, firstOrVerify, asterisksLength + characterInTheCodePhrase, "null");
+                    codePhrase.Append(characterInTheCodePhrase);
+                    TellSomethingToTheUser(true,new string[]{firstOrVerify, asterisksLength + characterInTheCodePhrase, "null"});
                     asterisksLength.Append("*");
                 }
             } while (true);
 
-            if (codePhrase == null)
+            if (codePhrase.Length == 0)
             {
-                GetAndVerifyPassPhrase();
+                codePhrase.Append(GetCodeWord(firstOrVerify));
             }
-            return codePhrase;
+
+            return codePhrase.ToString();
             
         }
 
@@ -50,7 +55,7 @@ namespace TKBoisvert.Cryptography.Core
                 }
                 else
                 {
-                    TellSomethingToTheUser(true, "They did not match,", "press any key to try again", "null");
+                    TellSomethingToTheUser(true, new string[]{"They did not match,", "press any key to try again", "null"});
                     Console.ReadKey();
                 }
             }
@@ -72,65 +77,29 @@ namespace TKBoisvert.Cryptography.Core
             }
         }
 
-        //public int[] GetCodedText()
-        //{
-        //    List<int> listOfInts = new List<int>();
+       
 
-        //    string theNumbers = "";
-
-        //    while (true)
-        //    {
-        //        string numberString = GetSomethingFromTheUser("Enter 000 to move on", theNumbers, "null");
-        //        int numberInt = Convert.ToInt32(numberString);
-        //        if (numberInt == 000)
-        //        {
-        //            WhatAmIDoing(theNumbers, "null", "null");
-        //            break;
-        //        }
-        //        else { listOfInts.Add(numberInt); }
-
-        //        theNumbers += (numberString + " ");
-        //    }
-
-        //    int[] arrayOfInts = new int[listOfInts.Count];
-
-        //    arrayOfInts = listOfInts.ToArray();
-
-        //    return arrayOfInts;
-        //}
-
-        public void TellSomethingToTheUser(bool clearScreen,string high, string middle, string low)
+        public void TellSomethingToTheUser(bool clearScreen,string[] arrayOrStringsYouWantToWrite)
         {
             if (clearScreen == true)
             {
                 Console.Clear();
             }
 
-            if (high == "null") { }
-            else if (high != null)
+            foreach (string s in arrayOrStringsYouWantToWrite)
             {
-                Console.WriteLine(high);
+                if (s == "null") { }
+                else if (s != null)
+                {
+                    Console.WriteLine(s);
+                }
+                else { Console.WriteLine(""); }
             }
-            else { Console.WriteLine(""); }
-
-            if (middle == "null") { }
-            else if (middle != null)
-            {
-                Console.WriteLine(middle);
-            }
-            else { Console.WriteLine(""); }
-
-            if (low == "null") { }
-            else if (low != null)
-            {
-                Console.WriteLine(low);
-            }
-            else { Console.WriteLine(""); }
         }
 
-        public string GetSomethingFromTheUser(bool clearScreen, string whatItIsYouWant, string middle, string low)
+        public string GetSomethingFromTheUser(bool clearScreen, string[] arrayOfStringsYouWantToWrite)
         {
-            TellSomethingToTheUser(clearScreen, whatItIsYouWant, middle, low);
+            TellSomethingToTheUser(clearScreen, arrayOfStringsYouWantToWrite);
 
             return Console.ReadLine();
         }
@@ -147,14 +116,16 @@ namespace TKBoisvert.Cryptography.Core
 
                 ConsoleKeyInfo keyInfo = Console.ReadKey();
 
+                //Remember That You need To Update the acceptable keys strokes for the applicible options
+                //Here
+                
                 if (keyInfo.Key == ConsoleKey.D1 || keyInfo.Key == ConsoleKey.D2)
                 {
                     return keyInfo;
                 }
                 else
                 {
-                    Console.Clear();
-                    Console.WriteLine("Um, that isn't an option...");
+                    TellSomethingToTheUser(true, new string[] { "Um, that isn't an option..." });
                     Console.ReadKey();
                 }
             }
@@ -162,9 +133,8 @@ namespace TKBoisvert.Cryptography.Core
 
         private static string BuildMenu(string[] menuItems)
         {
-            const int minSize = 7;
             int longestMenuItemName = menuItems.OrderByDescending(s => s.Length).First().Length;
-            int padSize = minSize + longestMenuItemName;
+            int padSize = 7 + longestMenuItemName;
             StringBuilder stringBuilder = new StringBuilder();
             stringBuilder.AppendLine("╓".PadRight(padSize, '─') + "╖");
             stringBuilder.AppendLine("║Press. . .".PadRight(padSize) + "║");

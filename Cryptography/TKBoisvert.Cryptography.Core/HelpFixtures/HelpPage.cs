@@ -9,21 +9,21 @@ namespace TKBoisvert.Cryptography.Core.HelpFixtures
     {
         public static void Explaination()
         {
-            AstheticTextAndPieces ATaP = new AstheticTextAndPieces();
+            UserInteractions ATaP = new UserInteractions();
 
             ListFlags();
 
-            ATaP.TellSomethingToTheUser(false, null, "Format:", null);
-            ATaP.TellSomethingToTheUser(false, "[String to be coded] [/flag]", null, "Press any key to continue. . .");
+            ATaP.TellSomethingToTheUser(false, new string[]{null, "Format:", null});
+            ATaP.TellSomethingToTheUser(false, new string[]{"[String to be coded] [/flag]", null, "Press any key to continue. . ."});
 
             Console.ReadKey();
         }
 
         public static void ListFlags()
         {
-            AstheticTextAndPieces ATaP = new AstheticTextAndPieces();
+            UserInteractions ATaP = new UserInteractions();
 
-            ATaP.TellSomethingToTheUser(true, "Flags avalible", "null", null);
+            ATaP.TellSomethingToTheUser(true, new string[]{"Flags avalible", "null", null});
 
             foreach (string fD in FlagsAndTheirDefinitions(Flags(), Definitions()))
             {
@@ -59,8 +59,7 @@ namespace TKBoisvert.Cryptography.Core.HelpFixtures
                 return stringArray;
             }
 
-            throw new NotSupportedException();
-            
+            throw new Exception();
         }
     }
 }

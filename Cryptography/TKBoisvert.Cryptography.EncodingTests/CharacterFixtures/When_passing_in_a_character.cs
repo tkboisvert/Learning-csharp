@@ -11,7 +11,7 @@ namespace TKBoisvert.Cryptography.EncodingTests
         {
             Scrambler scrambler = new Scrambler();
 
-            int i = scrambler.ChangeToASCIIValue("a");
+            int i = scrambler.ChangeToUtf8Value('a');
 
             Assert.AreEqual(97, i);
         }

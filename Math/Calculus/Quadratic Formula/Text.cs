@@ -72,7 +72,7 @@ namespace TKBoisvert.Calculus.ConsoleApp
         public static void menu()
         {
             string menu = BuildMenu(new[] {
-                "factoring", "checking factors", "Addition Sequences & Series", "Geometric Sequences & Series" });
+                "factoring", "checking factors", "Addition Sequences & Series", "Geometric Sequences & Series", "Binomial Theorem" });
 
             Console.Write(menu);
         }

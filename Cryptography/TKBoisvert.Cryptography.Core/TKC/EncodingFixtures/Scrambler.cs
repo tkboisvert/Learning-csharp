@@ -4,19 +4,16 @@ namespace TKBoisvert.Cryptography.Core
 {
     public class Scrambler
     {
-        public int ChangeToASCIIValue(string s)
+        public int ChangeToUtf8Value(char c)
         {
-            string StringOfNumbers = null;
-
-            foreach (byte b in System.Text.Encoding.UTF8.GetBytes(s.ToCharArray()))
+            foreach (byte b in System.Text.Encoding.UTF8.GetBytes(new char[]{c}))
             {
-                StringOfNumbers += b.ToString();
+                return Convert.ToInt32(b);
             }
-
-            return Convert.ToInt32(StringOfNumbers);
+            throw new ArgumentOutOfRangeException();
         }
 
-        public int[] ArrayOfASCIIValues(string StringToBeArrayed)
+        public int[] ArrayOfUtf8Values(string StringToBeArrayed)
         {
             int[] ArrayOfValues = new int[StringToBeArrayed.Length];
 
@@ -24,7 +21,7 @@ namespace TKBoisvert.Cryptography.Core
 
             foreach (char c in StringToBeArrayed)
             {
-                ArrayOfValues[i] += ChangeToASCIIValue(Convert.ToString(c));
+                ArrayOfValues[i] = ChangeToUtf8Value(c);
                 i++;
             }
 
@@ -33,22 +30,31 @@ namespace TKBoisvert.Cryptography.Core
 
         public int[] Scramble(string toBeScrambled, string scramblingWord)
         {
-            int[] arrayOfNumbersThatRepresentsTheStringToBeScrambled = ArrayOfASCIIValues(toBeScrambled);
-            int[] arrayOfNumbersThatRepresentsTheScramblingWord = ArrayOfASCIIValues(scramblingWord);
-            int[] arrayOfNumbersThatRepresentsTheScrambledWord = new int[arrayOfNumbersThatRepresentsTheStringToBeScrambled.Length];
+            int[] arrayOfNumbersThatRepresentsTheStringToBeScrambled = ArrayOfUtf8Values(toBeScrambled);
+            int[] arrayOfNumbersThatRepresentsTheScramblingWord = ArrayOfUtf8Values(scramblingWord);
+
+
+            return Encode(arrayOfNumbersThatRepresentsTheScramblingWord, arrayOfNumbersThatRepresentsTheStringToBeScrambled);
+        }
+
+        private int[] Encode(int[] scramblingWord, int[] phraseToBeEncoded)
+        {
+            int[] encodedPhrase = new int[phraseToBeEncoded.Length];
 
             int x = 0;
             int y = 0;
 
-            foreach (int i in arrayOfNumbersThatRepresentsTheStringToBeScrambled)
+            foreach (int i in phraseToBeEncoded)
             {
-                if (x == arrayOfNumbersThatRepresentsTheScramblingWord.Length) { x = 0; }
+                if (x == scramblingWord.Length) { x = 0; }
 
-                arrayOfNumbersThatRepresentsTheScrambledWord[y] = AddTogether(i, arrayOfNumbersThatRepresentsTheScramblingWord[x]);
+                encodedPhrase[y] = AddTogether(i, scramblingWord[x]);
                 x++;
                 y++;
             }
-            return arrayOfNumbersThatRepresentsTheScrambledWord;
+
+            return encodedPhrase;
+
         }
 
         public int AddTogether(int first, int second)

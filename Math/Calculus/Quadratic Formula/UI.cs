@@ -12,11 +12,12 @@ namespace TKBoisvert.Calculus.ConsoleApp
                 Console.Clear();
 
                 Text.menu();
-                
+
                 string myChoice = Console.ReadLine();
 
-                if (myChoice == "1" || myChoice == "2" || myChoice == "3" || myChoice == "4")
+                if (myChoice == "1" || myChoice == "2" || myChoice == "3" || myChoice == "4" || myChoice == "5")
                 {
+                    Console.Clear();
                     return myChoice;
                 }
                 else
@@ -33,24 +34,40 @@ namespace TKBoisvert.Calculus.ConsoleApp
         {
             Console.WriteLine("Enter the {0}", WhichOne);
 
-            Console.Write("{0} ", NullOrX);
+            Console.Write("{0} = ", NullOrX);
 
             string x = Console.ReadLine();
 
-            CheckIsNumber(x);
-            
+            if (CheckIsNumber(x) == false)
+            {
+                Console.Clear();
+
+                return GetFactor(WhichOne, NullOrX);
+            }
+
             return Formatter.ChangeFractionsToDecimal_StillReturnsDouble_(x);
         }
 
-        public static void CheckIsNumber(string stringInQuestion)
+        public static bool CheckIsNumber(string stringInQuestion)
         {
             foreach (char c in stringInQuestion)
             {
                 if (char.IsLetter(c) || char.IsWhiteSpace(c))
                 {
-                    throw new InvalidOperationException();
+                    return false;
                 }
             }
+            return true;
+        }
+
+        public static string GetStringFactor(string enterThe__WhatYouWant, string WhatYouWant)
+        {
+            Console.WriteLine("Enter the {0}", enterThe__WhatYouWant);
+
+            Console.Write("{0} = ", WhatYouWant);
+
+            return Console.ReadLine();
+
         }
     }
 }

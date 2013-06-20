@@ -8,9 +8,9 @@ namespace TKBoisvert.Calculus.ConsoleApp
         {
             Console.Clear();
 
-            double a1 = UI.GetFactor("first term (a1)", "a1 = ");
-            double d = UI.GetFactor("common difference (d)", "d = ");
-            double n = UI.GetFactor("length (n)", "n = ");
+            double a1 = UI.GetFactor("first term (a1)", "a1");
+            double d = UI.GetFactor("common difference (d)", "d");
+            double n = UI.GetFactor("length (n)", "n");
 
             double an = Equations.findASpecificNumberInAdditionSS(a1, n, d);
 

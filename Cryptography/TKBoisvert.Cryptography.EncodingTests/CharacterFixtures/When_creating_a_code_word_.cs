@@ -11,7 +11,7 @@ namespace TKBoisvert.Cryptography.EncodingTests.CharacterFixtures
         {
             Scrambler scrambler = new Scrambler();
 
-            int[] intArray = scrambler.ArrayOfASCIIValues("Hello World");
+            int[] intArray = scrambler.ArrayOfUtf8Values("Hello World");
 
             int[] intArrayTwo = new int[] { 72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100 };
 

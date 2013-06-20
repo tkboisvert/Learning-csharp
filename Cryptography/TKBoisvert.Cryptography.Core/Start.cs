@@ -5,9 +5,8 @@ namespace TKBoisvert.Cryptography.Core
     {
         public static void TKC(char[] charArray)
         {
-            AstheticTextAndPieces ATaP = new AstheticTextAndPieces();
 
-            ConsoleKeyInfo keyInfo = ATaP.Menu();
+            ConsoleKeyInfo keyInfo = new UserInteractions().Menu();
 
             string stringToBeConverted = Change.ChangeToFormattedStringForConversion(charArray);
 

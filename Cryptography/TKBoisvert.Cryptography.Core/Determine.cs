@@ -10,7 +10,7 @@ namespace TKBoisvert.Cryptography.Core
         public void HasFlag(StringBuilder stringBuilder)
         {
 
-            AstheticTextAndPieces ATaP = new AstheticTextAndPieces();
+            UserInteractions ATaP = new UserInteractions();
 
             Determine determine = new Determine();
 
@@ -20,7 +20,7 @@ namespace TKBoisvert.Cryptography.Core
                 {
                     HelpPage.ListFlags();
 
-                    string flag = (ATaP.GetSomethingFromTheUser(false, null, "Enter your desired flag", "null"));
+                    string flag = (ATaP.GetSomethingFromTheUser(false, new string[]{null, "Enter your desired flag"}));
 
                     if (Check.ForFlag(flag) == true)
                     {
@@ -57,12 +57,12 @@ namespace TKBoisvert.Cryptography.Core
             }
         }
 
-        private void ActionToCarryOut(Hashes hash, char[] charArrayForEncodingPurposes)
+        private void ActionToCarryOut(Hashes hash, char[] charArrayForEncodingOrDecodingPurposes)
         {
             switch (hash)
             {
                 case Hashes.TKC:
-                    Start.TKC(charArrayForEncodingPurposes);
+                    Start.TKC(charArrayForEncodingOrDecodingPurposes);
                     break;
 
                 case Hashes.Help:
@@ -87,6 +87,7 @@ namespace TKBoisvert.Cryptography.Core
         {
             TKC,
             Help,
+            //Update Definitions Alongside Hashes
         }
 
         public static bool IfTwoStringArraysAreTheSameLength(string[] one, string[] two)

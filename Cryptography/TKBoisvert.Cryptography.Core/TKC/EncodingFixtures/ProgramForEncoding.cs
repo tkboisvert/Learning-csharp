@@ -6,13 +6,10 @@ namespace TKBoisvert.Cryptography.Core
     {
         public static void Encode(string toBeEncoded)
         {
-            Scrambler scrambler = new Scrambler();
 
-            AstheticTextAndPieces ATaP = new AstheticTextAndPieces();
+            string codePhrase = new UserInteractions().GetAndVerifyPassPhrase();
 
-            string codePhrase = ATaP.GetAndVerifyPassPhrase();
-
-            int[] arrayOfscrambledCode = scrambler.Scramble(toBeEncoded, codePhrase);
+            int[] arrayOfscrambledCode = new Scrambler().Scramble(toBeEncoded, codePhrase);
 
             foreach (int i in arrayOfscrambledCode)
             {

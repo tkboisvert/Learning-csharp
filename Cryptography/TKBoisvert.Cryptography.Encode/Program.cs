@@ -11,13 +11,13 @@ namespace TKBoisvert.Cryptography
         {
             while (true)
             {
-                AstheticTextAndPieces ATaP = new AstheticTextAndPieces();
+                UserInteractions ATaP = new UserInteractions();
 
                 Determine determine = new Determine();
 
                 StringBuilder stringBuilder = new StringBuilder();
 
-                stringBuilder.Append(ATaP.GetSomethingFromTheUser(true, "Enter what you want to encode/decode", "Remember to add a flag", "Type /? for help"));
+                stringBuilder.Append(ATaP.GetSomethingFromTheUser(true, new string[] {"Enter what you want to encode/decode", "Remember to add a flag", "Type /? for help"}));
 
                 determine.HasFlag(stringBuilder);
                 
