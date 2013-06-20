@@ -7,12 +7,14 @@ namespace FizzBuzz.Tests
     class When_converting_a_single_number_to_fizz_buzz
     {
         [TestCase(1, "1")]
-        [TestCase(3, "fizz")]
+        [TestCase(3, "lucky")]
         [TestCase(5, "buzz")]
         [TestCase(6, "fizz")]
         [TestCase(10, "buzz")]
+        [TestCase(13, "lucky")]
         [TestCase(15, "fizzbuzz")]
-        [TestCase(30, "fizzbuzz")]
+        [TestCase(30, "lucky")]
+        [TestCase(45, "fizzbuzz")]
         public void Should_convert_the_inout_to_the_expected_output(int inputValue, string expectedValue)
         {
             var numberToFizzBuzzConverter = new NumberToFizzBuzzConverter();

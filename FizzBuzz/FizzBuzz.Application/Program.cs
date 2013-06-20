@@ -23,7 +23,6 @@ namespace FizzBuzz.Application
             Console.WriteLine(fizzBuzzDataFormatter.Format(fizzBuzzEngine.Run(startNumber, endNumber)));
 
             Console.ReadKey();
-
         }
     }
 }

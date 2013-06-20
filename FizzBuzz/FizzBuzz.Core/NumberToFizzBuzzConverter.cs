@@ -4,6 +4,12 @@ namespace FizzBuzz
     {
         public string Convert(int numerToConvert)
         {
+            string number = numerToConvert.ToString();
+
+            if (number.Contains("3"))
+            {
+                return "lucky";
+            }
             if (numerToConvert % 15 == 0)
             {
                 return "fizzbuzz";
