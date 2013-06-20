@@ -8,7 +8,7 @@
     <ProjectGuid>{A1A8C51C-FF52-4435-AF43-E1FFF8605EE9}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FizzBuzz.Core</RootNamespace>
+    <RootNamespace>FizzBuzz</RootNamespace>
     <AssemblyName>FizzBuzz.Core</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
@@ -41,6 +41,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
+    <Compile Include="FizzBuzzDataFormatter.cs" />
+    <Compile Include="FizzBuzzEngine.cs" />
+    <Compile Include="NumberToFizzBuzzConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
