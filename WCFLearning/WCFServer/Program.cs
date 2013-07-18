@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.ServiceModel.Channels;
+using System.ServiceModel.Description;
 using System.Text;
 using WCFContract;
 using FizzBuzz;
@@ -14,7 +16,15 @@ namespace WCFServer
         {
             ServiceHost serviceHost = new ServiceHost(typeof (FizzBuzzService));
 
-            serviceHost.AddServiceEndpoint(typeof(IFizzBuzzService), new NetNamedPipeBinding(), new Uri("net.pipe://localhost/FizzTheBuzz"));
+            ServiceEndpoint serviceEndpoint = serviceHost.AddServiceEndpoint(typeof(IFizzBuzzService), GetBinding(), GetAddress());
+
+            //ServiceMetadataBehavior serviceMetadataBehavior = new ServiceMetadataBehavior
+            //    {
+            //        HttpGetEnabled = true,
+            //        HttpGetUrl = new Uri("http://localhost:8888/FizzTheBuzz/Wsdl")
+            //    };
+
+            //serviceHost.Description.Behaviors.Add(serviceMetadataBehavior);
 
             serviceHost.Open();
 
@@ -23,7 +33,18 @@ namespace WCFServer
             Console.ReadKey();
 
             serviceHost.Close();
+        }
 
+        private static Uri GetAddress()
+        {
+            //return new Uri("http://localhost:8888/FizzTheBuzz");
+            return new Uri("net.pipe://localhost/FizzTheBuzz");
+        }
+
+        private static Binding GetBinding()
+        {
+            //return new BasicHttpBinding();
+            return new NetNamedPipeBinding();
         }
     }
     class FizzBuzzService : IFizzBuzzService

@@ -6,7 +6,7 @@ using System.ServiceModel;
 
 namespace WCFContract
 {
-    [ServiceContract]
+    [ServiceContract(Namespace = "http://tkboisvert.net/FizzTheBuzz")]
     public interface IFizzBuzzService
     {
         [OperationContract]
