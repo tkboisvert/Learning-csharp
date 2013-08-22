@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextToTweet.App", "TextToTweet.App.csproj", "{DAEEC314-C412-4829-BCD0-5456926924EA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TextToTweet.Core", "..\TextToTweet.Core\TextToTweet.Core.csproj", "{7D9C30BE-6177-4C54-AFF2-317C8CC6A8CD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DAEEC314-C412-4829-BCD0-5456926924EA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DAEEC314-C412-4829-BCD0-5456926924EA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DAEEC314-C412-4829-BCD0-5456926924EA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DAEEC314-C412-4829-BCD0-5456926924EA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7D9C30BE-6177-4C54-AFF2-317C8CC6A8CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7D9C30BE-6177-4C54-AFF2-317C8CC6A8CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7D9C30BE-6177-4C54-AFF2-317C8CC6A8CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7D9C30BE-6177-4C54-AFF2-317C8CC6A8CD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
