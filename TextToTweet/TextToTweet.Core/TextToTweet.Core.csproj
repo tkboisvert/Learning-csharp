@@ -30,22 +30,41 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Hammock.ClientProfile">
-      <HintPath>..\TextToTweet.App\packages\TweetSharp.2.3.1\lib\4.0\Hammock.ClientProfile.dll</HintPath>
+    <Reference Include="Microsoft.Practices.Prism">
+      <HintPath>..\TextToTweet.App\packages\TweetinviAPI.0.8.1.0\lib\Microsoft.Practices.Prism.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\TextToTweet.App\packages\TweetSharp.2.3.1\lib\4.0\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="oAuthConnection">
+      <HintPath>..\TextToTweet.App\packages\TweetinviAPI.0.8.1.0\lib\oAuthConnection.dll</HintPath>
+    </Reference>
+    <Reference Include="SearchEngine">
+      <HintPath>..\TextToTweet.App\packages\TweetinviAPI.0.8.1.0\lib\SearchEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="Streaminvi">
+      <HintPath>..\TextToTweet.App\packages\TweetinviAPI.0.8.1.0\lib\Streaminvi.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
-    <Reference Include="TweetSharp">
-      <HintPath>..\TextToTweet.App\packages\TweetSharp.2.3.1\lib\4.0\TweetSharp.dll</HintPath>
+    <Reference Include="TweetinCore">
+      <HintPath>..\TextToTweet.App\packages\TweetinviAPI.0.8.1.0\lib\TweetinCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Tweetinvi">
+      <HintPath>..\TextToTweet.App\packages\TweetinviAPI.0.8.1.0\lib\Tweetinvi.dll</HintPath>
+    </Reference>
+    <Reference Include="TwitterToken">
+      <HintPath>..\TextToTweet.App\packages\TweetinviAPI.0.8.1.0\lib\TwitterToken.dll</HintPath>
+    </Reference>
+    <Reference Include="UILibrary">
+      <HintPath>..\TextToTweet.App\packages\TweetinviAPI.0.8.1.0\lib\UILibrary.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
