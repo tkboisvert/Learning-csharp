@@ -31,7 +31,8 @@ namespace TextToTweet.Core
     	        reqStream.Write(bytes, 0, bytes.Length);
     	        // close the stream
     	        reqStream.Close();
-            } catch (Exception ex) {/* DO NOTHING */}
+            }
+            catch (Exception ex) { throw new NotSupportedException(); }
         }
     }
 }
