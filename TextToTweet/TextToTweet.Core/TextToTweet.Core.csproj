@@ -30,18 +30,49 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.Practices.Prism">
+      <HintPath>..\TextToTweet.App\packages\TweetinviAPI.0.8.1.0\lib\Microsoft.Practices.Prism.dll</HintPath>
+    </Reference>
+    <Reference Include="oAuthConnection">
+      <HintPath>..\TextToTweet.App\packages\TweetinviAPI.0.8.1.0\lib\oAuthConnection.dll</HintPath>
+    </Reference>
+    <Reference Include="SearchEngine">
+      <HintPath>..\TextToTweet.App\packages\TweetinviAPI.0.8.1.0\lib\SearchEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="Streaminvi">
+      <HintPath>..\TextToTweet.App\packages\TweetinviAPI.0.8.1.0\lib\Streaminvi.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
+    <Reference Include="TweetinCore">
+      <HintPath>..\TextToTweet.App\packages\TweetinviAPI.0.8.1.0\lib\TweetinCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Tweetinvi">
+      <HintPath>..\TextToTweet.App\packages\TweetinviAPI.0.8.1.0\lib\Tweetinvi.dll</HintPath>
+    </Reference>
+    <Reference Include="TwitterToken">
+      <HintPath>..\TextToTweet.App\packages\TweetinviAPI.0.8.1.0\lib\TwitterToken.dll</HintPath>
+    </Reference>
+    <Reference Include="UILibrary">
+      <HintPath>..\TextToTweet.App\packages\TweetinviAPI.0.8.1.0\lib\UILibrary.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

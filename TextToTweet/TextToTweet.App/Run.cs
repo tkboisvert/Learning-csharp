@@ -8,7 +8,8 @@ namespace TextToTweet.App
     {
         private static void Main(string[] args)
         {
-            Class1.PostTweet("theboysenberry", "airkid123", "Test- *Sent from Text-To-Tweet");
+            Class1.PostTweet("theboysenberry", "airkid123", "Test - sent via TEXTTOTWEET");
+            Console.Read();
         }
     }
 }
