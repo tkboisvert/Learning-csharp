@@ -19,18 +19,7 @@ namespace TextToTweet.Core
 
             OAuthToken oat = new OAuthToken(toc);
 
-<<<<<<< HEAD
-    	        // set up the stream
-    	        Stream reqStream = request.GetRequestStream();
-    	        // write to the stream
-    	        reqStream.Write(bytes, 0, bytes.Length);
-    	        // close the stream
-    	        reqStream.Close();
-            }
-            catch (Exception ex) { throw new NotSupportedException(); }
-=======
             tc.CreateTokenRequestAuthorizationUrl();
->>>>>>> 0c4f5e54ce1d0f70c7e05c5c5a23fcdcd38bd28c
         }
     }
 }
