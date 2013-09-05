@@ -1,4 +1,5 @@
-﻿using TweetSharp;
+﻿using System;
+using TweetSharp;
 
 
 namespace TweetTest.core
@@ -7,11 +8,20 @@ namespace TweetTest.core
     {
         public static void PostTweet(TwitterService tweetApp, string tweet )
         {
-            var tweetOptions = new SendTweetOptions() {Status = tweet};
+            var tweetOptions = new SendTweetOptions() {Status = "another test"};
 
             if (tweetApp != null)
             {
-                tweetApp.SendTweet(tweetOptions);
+                try
+                {
+                    tweetApp.SendTweet(tweetOptions);
+                }
+                catch (Exception ex)
+                {
+                    
+                    throw;
+                }
+                
 
             
             }
