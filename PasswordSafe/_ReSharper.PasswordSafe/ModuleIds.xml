@@ -1,0 +1,4 @@
+<Modules>
+  <Module PersistentId="234F6657-421D-48EE-B5F7-7510C8BBE9D0" ModuleId="PasswordSafe" />
+  <Module PersistentId="4AC9F640-B3E7-47D6-9E9F-CB4F4EA7E98B" ModuleId="PasswordSafe.Core" />
+</Modules>

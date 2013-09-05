@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TweetTest", "TweetTest\TweetTest.csproj", "{5948EBF0-A244-4031-8DC0-6080417A038B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TweetTest.core", "TweetTest.core\TweetTest.core.csproj", "{5D6692C6-A98A-412A-9B92-98A7E7455A29}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5948EBF0-A244-4031-8DC0-6080417A038B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5948EBF0-A244-4031-8DC0-6080417A038B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5948EBF0-A244-4031-8DC0-6080417A038B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5948EBF0-A244-4031-8DC0-6080417A038B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D6692C6-A98A-412A-9B92-98A7E7455A29}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D6692C6-A98A-412A-9B92-98A7E7455A29}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D6692C6-A98A-412A-9B92-98A7E7455A29}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D6692C6-A98A-412A-9B92-98A7E7455A29}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

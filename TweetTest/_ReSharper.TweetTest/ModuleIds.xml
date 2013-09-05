@@ -1,0 +1,5 @@
+<Modules>
+  <Module PersistentId="5948EBF0-A244-4031-8DC0-6080417A038B" ModuleId="TweetTest" />
+  <Module PersistentId="5D6692C6-A98A-412A-9B92-98A7E7455A29" ModuleId="TweetTest.core" />
+  <Module PersistentId="E02DF8A3-E283-4875-967F-919D14AEE6B8" ModuleId="TweetTest.App" />
+</Modules>
